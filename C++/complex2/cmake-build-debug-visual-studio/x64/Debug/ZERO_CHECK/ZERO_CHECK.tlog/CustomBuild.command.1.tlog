@@ -1,0 +1,10 @@
+^D:\桌面\CODE\C++\COMPLEX2\CMAKE-BUILD-DEBUG-VISUAL-STUDIO\CMAKEFILES\64C842B4D110D9F7F3FA3C3CAE4198E0\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\JetBrains\CLion 2023.1.4\bin\cmake\win\x64\bin\cmake.exe" -SD:/桌面/Code/C++/complex2 -BD:/桌面/Code/C++/complex2/cmake-build-debug-visual-studio --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/桌面/Code/C++/complex2/cmake-build-debug-visual-studio/complex2.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
