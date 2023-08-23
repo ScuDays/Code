@@ -1,8 +1,1 @@
-/usr/bin/cmake -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - Unix Makefiles" -S /tmp/tmp.SGqQ3DjCRG -B /tmp/tmp.SGqQ3DjCRG/cmake-build-release-
-CMake Error at CMakeLists.txt:8 (target_link_libraries):
-  Cannot specify link libraries for target "practice7_13_2" which is not
-  built by this project.
-
-
--- Configuring incomplete, errors occurred!
-See also "/tmp/tmp.SGqQ3DjCRG/cmake-build-release-/CMakeFiles/CMakeOutput.log".
+无法启动 CMake 可执行文件 '\usr\bin\cmake': Connect timed out 配置 禁用配置文件
