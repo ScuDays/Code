@@ -1,17 +1,5 @@
-import java.util.HashSet;
-
-public class main {
-
+public class Main {
     public static void main(String[] args) {
-        HashSet<String> s = new HashSet<>();
-        s.add("Tokyo");
-        s.add("Lagos");
-
-        for (String a:s
-             ) {
-            System.out.println(a);
-
-        }
-
+        System.out.println("Hello world!");
     }
 }

@@ -1,0 +1,3 @@
+﻿  ReturnTest.cpp
+D:\桌面\Code\C++\ReturnTest\ReturnTest.cpp(12): warning C4172: 返回局部变量或临时变量的地址: a
+  ReturnTest.vcxproj -> D:\桌面\Code\C++\ReturnTest\x64\Debug\ReturnTest.exe
