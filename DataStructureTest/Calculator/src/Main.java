@@ -10,18 +10,18 @@ public class Main {
     //符号栈和数字栈
     static Stack<Character> symbolStack = new Stack<Character>();
     static Stack<Double> numberStack = new Stack<Double>();
-    static int getOrder = 0;
-    //三位缓存来判断‘（ - 1 ’ 这种情况。
+
+    //三位缓存来判断负数的情况，"（—3 " 和 "_-3 " 这两种情况。
     static char previousOne = ' ';
     static char previousTwo = ' ';
     static char previousThree = ' ';
     static int cache;
     static int max;
+    static int getOrder = 0;
     static String input;
     public static void main(String[] args) {
             max = 0;
             //输入表达式
-        while(true) {
             Scanner scanner = new Scanner(System.in);
             input = scanner.next();
             //判断非法表达式
@@ -30,11 +30,13 @@ public class Main {
             //开始计算
             algorithm();
             //打印答案
+            char previousOne = ' ';
+            char previousTwo = ' ';
+            char previousThree = ' ';
             cache = 0 ;
             max = 0;
             getOrder = 0;
 
-        }
     }
     //判断是否是负数
     public static boolean isNegative(){
@@ -83,7 +85,6 @@ public class Main {
         while(true){
             int sum = (int)previousOne - (int)'0';
             finalNum = finalNum * 10 + sum;
-
             getNextChar();
             if(!isDight(previousOne)){
                 break;
@@ -104,7 +105,6 @@ public class Main {
                     break;
                 }
             }
-
             finalNum = finalNum + (decNum / (pow(10, cycle)));
         }
         //处理正负
@@ -147,12 +147,11 @@ public class Main {
         do {
             getNextNumber();
         }while(previousOne != '=');
-
         calculate(previousOne);
-        while(!numberStack.empty()){
-            System.out.println(numberStack.pop());}
-        while(!symbolStack.empty()){
-            System.out.println(symbolStack.pop());}
+        //while(!numberStack.empty()){
+            System.out.println(numberStack.pop());
+//        while(!symbolStack.empty()){
+//            System.out.println(symbolStack.pop());}
     }
     public static void calculate(char previous){
         int nowPriority = standardOutside(previous);
@@ -171,7 +170,6 @@ public class Main {
             else if (symbol == '&') out = pow(frontNumber, (1/backNumber));
             numberStack.push(out);
             if (symbolStack.empty())break;
-
         }
 
         if(previous == ')'){
