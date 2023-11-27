@@ -15,28 +15,33 @@ public class Main {
     static char previousOne = ' ';
     static char previousTwo = ' ';
     static char previousThree = ' ';
-    static int cache;
-    static int max;
+    static int cache = 0;
+    static int max = 0;
     static int getOrder = 0;
     static String input;
+
     public static void main(String[] args) {
-            max = 0;
             //输入表达式
             Scanner scanner = new Scanner(System.in);
             input = scanner.next();
             //判断非法表达式
-            //System.out.println(input);
             if (!isIllegal(input)) System.out.println("非法表达式");
             //开始计算
             algorithm();
             //打印答案
-            char previousOne = ' ';
-            char previousTwo = ' ';
-            char previousThree = ' ';
-            cache = 0 ;
-            max = 0;
-            getOrder = 0;
+        while(!numberStack.empty()) {
+            System.out.println(numberStack.pop());
+        }
+        while(!symbolStack.empty()) {
+            System.out.println(symbolStack.pop());
+        }
+    }
 
+    public static void algorithm() {
+        do {
+            getNextNumber();
+        }while(previousOne != '=');
+        calculate(previousOne);
     }
     //判断是否是负数
     public static boolean isNegative(){
@@ -128,7 +133,6 @@ public class Main {
                 symbolStack.push(previous);
                 cache--;
             }
-
             else {
                     calculate(previous);
                 }
@@ -143,16 +147,7 @@ public class Main {
             return  previousOne;
         }
     }
-    public static void algorithm() {
-        do {
-            getNextNumber();
-        }while(previousOne != '=');
-        calculate(previousOne);
-        //while(!numberStack.empty()){
-            System.out.println(numberStack.pop());
-//        while(!symbolStack.empty()){
-//            System.out.println(symbolStack.pop());}
-    }
+
     public static void calculate(char previous){
         int nowPriority = standardOutside(previous);
 
@@ -174,7 +169,8 @@ public class Main {
 
         if(previous == ')'){
             symbolStack.pop();
-            cache--;
+          
+            //cache--;
         }
         else {
             symbolStack.push(previous);
@@ -219,4 +215,6 @@ public class Main {
         else if (symbol == '=') return 0;
         else return -1;
     }
+
+
 }
