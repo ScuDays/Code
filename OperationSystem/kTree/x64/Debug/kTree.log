@@ -1,0 +1,5 @@
+﻿  FileName.c
+D:\OneDrive\桌面\Code\OperationSystem\kTree\FileName.c(56,9): warning C4033: “tree_Create”必须返回值
+D:\OneDrive\桌面\Code\OperationSystem\kTree\FileName.c(73,14): warning C4013: “GetPidLong”未定义；假设外部返回 int
+D:\OneDrive\桌面\Code\OperationSystem\kTree\FileName.c(63): warning C4715: “tree_Create”: 不是所有的控件路径都返回值
+  kTree.vcxproj -> D:\OneDrive\桌面\Code\OperationSystem\kTree\x64\Debug\kTree.exe

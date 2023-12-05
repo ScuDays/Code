@@ -1,0 +1,11 @@
+﻿  Thread.cpp
+C:\Users\yd\Downloads\Compressed\pthreads-w32-2-9-1-release\Pre-built.2\include\pthread.h(320,17): error C2011: “timespec”:“struct”类型重定义
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\time.h(45,12): message : 参见“timespec”的声明
+D:\OneDrive\桌面\Code\OperationSystem\Thread\Thread.cpp(23,7): error C2664: “int pthread_create(pthread_t *,const pthread_attr_t *,void *(__cdecl *)(void *),void *)”: 无法将参数 4 从“const char [2]”转换为“void *”
+D:\OneDrive\桌面\Code\OperationSystem\Thread\Thread.cpp(23,43): message : 转换丢失限定符
+C:\Users\yd\Downloads\Compressed\pthreads-w32-2-9-1-release\Pre-built.2\include\pthread.h(940,31): message : 参见“pthread_create”的声明
+D:\OneDrive\桌面\Code\OperationSystem\Thread\Thread.cpp(23,7): message : 尝试匹配参数列表“(pthread_t *, int, overloaded-function, const char [2])”时
+D:\OneDrive\桌面\Code\OperationSystem\Thread\Thread.cpp(25,7): error C2664: “int pthread_create(pthread_t *,const pthread_attr_t *,void *(__cdecl *)(void *),void *)”: 无法将参数 4 从“const char [2]”转换为“void *”
+D:\OneDrive\桌面\Code\OperationSystem\Thread\Thread.cpp(25,43): message : 转换丢失限定符
+C:\Users\yd\Downloads\Compressed\pthreads-w32-2-9-1-release\Pre-built.2\include\pthread.h(940,31): message : 参见“pthread_create”的声明
+D:\OneDrive\桌面\Code\OperationSystem\Thread\Thread.cpp(25,7): message : 尝试匹配参数列表“(pthread_t *, int, overloaded-function, const char [2])”时
