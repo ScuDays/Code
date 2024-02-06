@@ -1,7 +1,7 @@
 public class Main {
 
 
-    public static int []data = {1,2,1,2,3,2};
+    public static int []data = {1,2,1,3,3,2};
     public static int last;
     public static int Now;
     public static void main(String[] args) {
@@ -20,7 +20,7 @@ public class Main {
             else if(last == 3){
                 if(Now == 2) System.out.print("12 ");
             }
-            else System.out.print(Now+" ");
+            else System.out.print(Now + " ");
             last  = Now;
         }
     }
