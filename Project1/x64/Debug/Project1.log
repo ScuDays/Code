@@ -1,0 +1,6 @@
+﻿  FileName.c
+D:\OneDrive\桌面\Code\Project1\FileName.c(2,1): warning C4005: “_CRT_SECURE_NO_WARNINGS”: 宏重定义
+D:\OneDrive\桌面\Code\Project1\FileName.c(1,1): message : 参见“_CRT_SECURE_NO_WARNINGS”的前一个定义
+D:\OneDrive\桌面\Code\Project1\FileName.c(13,10): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“int *”
+D:\OneDrive\桌面\Code\Project1\FileName.c(13,10): warning C4313: "printf": 格式字符串中的 "%d" 与类型为 "int *" 的参数 1 冲突
+  Project1.vcxproj -> D:\OneDrive\桌面\Code\Project1\x64\Debug\Project1.exe
