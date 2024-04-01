@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>frame.jsp</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        #header {
+            background-color: red;
+            height: 50px;
+            width: 100%;
+        }
+        #left {
+            background-color: yellow;
+            width: 30%;
+            height: calc(100% - 50px);
+            position: absolute;
+            left: 0;
+            top: 50px;
+        }
+        #right {
+            background-color: green;
+            width: 70%;
+            height: calc(100% - 50px);
+            position: absolute;
+            right: 0;
+            top: 50px;
+        }
+        #bottom {
+            background-color: grey;
+            height: 50px;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var header = document.getElementById('header');
+            var left = document.getElementById('left');
+            var right = document.getElementById('right');
+            var bottom = document.getElementById('bottom');
+            
+            header.onclick = function() {
+                if (left.classList.contains('hidden')) {
+                    left.classList.remove('hidden');
+                } else {
+                    left.classList.add('hidden');
+                }
+            }
+            
+            left.onclick = function() {
+                left.classList.add('hidden');
+            }
+            
+            right.onclick = function() {
+                alert('网页的右部');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="header">网页的头部</div>
+    <div id="left">网页的左部</div>
+    <div id="right">网页的右部</div>
+    <div id="bottom">网页的底部</div>
+</body>
+</html>
