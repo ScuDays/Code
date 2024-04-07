@@ -6,7 +6,6 @@
 <%
     // 指定要读取的文件路径
     String filePath = "D:\\OneDrive\\桌面\\Code\\WebDevelopmentCourse\\homework\\05-1\\web\\WEB-INF\\source\\sendSource.json";
-
     // 使用StringBuilder来收集文件内容
     StringBuilder jsonContent = new StringBuilder();
     BufferedReader reader = null;

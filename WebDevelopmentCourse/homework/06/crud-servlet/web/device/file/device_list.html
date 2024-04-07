@@ -1,0 +1,74 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<div id="record_list_div" name="record_list_div"></div>
+</body>
+</html>
+
+<script src="../../assets/js/jquery-1.8.3.min.js"></script>
+<script>
+    function addRecord() {
+        window.location.href = "device_add.html";
+    }
+
+    function modifyRecord(id) {
+        window.location.href = "device_modify.html?id=" + id;
+    }
+
+    function deleteRecord(id) {
+        if (confirm("您确定要删除这个记录吗？id=" + id)) {
+            var url = "../../device_delete";
+            var data = {"action": "set_device_record", "id": id};
+            $.post(url, data, function (res) {
+                console.log(res);
+                if (res.result_code == 0) {
+                    alert("删除了记录！id=" + id);
+                    window.location.reload();
+                }
+            });
+        }
+    }
+
+    /*--------------------从后端获取数据 开始--------------------*/
+    function getRecord() {
+        var url = "../../device_query";
+        var data = {"action": "get_device_record"};
+        $.post(url, data, function (res) {
+            console.log(res);
+            var html = "";
+            var count = 0;
+            if (res.result_code == 0) {
+                var list = res.aaData;
+                if (list != undefined && list.length > 0) {
+                    for (var i = 0; i < list.length; i++) {
+
+                        var record = list[i];
+                        var id = record.id;
+                        var object_id = record.object_id;
+                        var title = record.title;
+                        var status = record.status;
+                        var limit_time = record.limit_time;
+                        var create_time = record.create_time;
+                        var creator = record.creator;
+
+                        html = html + "序号：" + object_id + "<br>事件：" + title + "<br>状态：" + status + "<br>截止时间："
+                            + limit_time + "<br>创建时间：" + create_time +"<br>创建人员：" + creator +"<br>";
+                        html = html + "<a href=\"javascript:modifyRecord(" + id + ")\">【修改记录】</a><a href=\"javascript:deleteRecord(" + id + ")\">【删除记录】</a><br>";
+                        html = html + "<br>";
+                        html = html + "<p>";
+                        console.log(html);
+                        count = count + 1;
+                    }
+                }
+            }
+            html = html + "<hr><div>当前查询到" + count + "代办事项</div>";
+            html = html + "<button onclick=\"javascript:addRecord();\">添加代办事项</button><br>";
+            $("#record_list_div").html(html);
+        });
+    }
+
+    getRecord();
+    /*--------------------从后端获取数据 结束--------------------*/
+</script>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <!-- ================  device begin =================           -->
+    <servlet>
+        <servlet-name>device_delete</servlet-name>
+        <servlet-class>device.delete</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>device_delete</servlet-name>
+        <url-pattern>/device_delete</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>device_modify</servlet-name>
+        <servlet-class>device.modify</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>device_modify</servlet-name>
+        <url-pattern>/device_modify</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>device_add</servlet-name>
+        <servlet-class>device.add</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>device_add</servlet-name>
+        <url-pattern>/device_add</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>device_query</servlet-name>
+        <servlet-class>device.query</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>device_query</servlet-name>
+        <url-pattern>/device_query</url-pattern>
+    </servlet-mapping>
+    <!-- ================  device end =================           -->
+</web-app>

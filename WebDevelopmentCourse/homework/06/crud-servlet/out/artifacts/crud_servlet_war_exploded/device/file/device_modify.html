@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>修改设备</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<form action="device_modify?action=modify_device_record" id="modify_record_form" name="modify_record_form" method="post">
+    <input type="hidden" id="page_id" name="page_id" value="device_modify"/>
+    <input type="hidden" id="id" name="id" value="<%=id%>"/>
+    序号：<input id="object_id" name="object_id"><br>
+    事件：<input id="title" name="title"><br>
+    状态：<input id="status" name="status" >建议输入：“等待完成”，或者“已完成”<br>
+    截止时间：<input id="limit_time" name="limit_time" ><br>
+    创建人员：<input id="creator" name="creator" ><br>
+    <button type="button" id="modify_button" name="modify_button" onclick="javascript:submitModifyRecord();">提交修改</button>
+</form>
+<div id="record_list_div" name="record_list_div"></div>
+</body>
+</html>
+
+<script src="../../assets/js/jquery-1.8.3.min.js"></script>
+<script>
+    var id=undefined;
+    function submitModifyRecord(){
+        alert(111);
+        //document.modify_record_form.submit();
+        var data={"action":"modify_device_record","id":id}
+        data.object_id=$("#object_id").val();
+        data.title=$("#title").val();
+        data.limit_time=$("#limit_time").val();
+        data.creator=$("#creator").val();
+        setRecord(data);
+    }
+    /*--------------------从后端获取数据 开始--------------------*/
+    function getRecord(id){
+        console.log(id);
+        var url="../../device_query";
+        var data={"action":"get_device_record","id":id};
+        $.post(url,data,function(res){
+            console.log(res);
+            var html="";
+            if(res.result_code==0){
+                var list=res.aaData;
+                if (list != undefined && list.length > 0) {
+                    for (var i = 0; i < list.length; i++) {
+
+                        var record = list[i];
+                        var id = record.id;
+                        var object_id = record.object_id;
+                        var title = record.title;
+                        var status = record.status;
+                        var limit_time = record.limit_time;
+                        var create_time = record.create_time;
+                        var creator = record.creator;
+
+                        html = html + "序号：" + object_id + "<br>事件：" + title + "<br>状态：" + status + "<br>截止时间："
+                            + limit_time + "<br>创建时间：" + create_time +"<br>创建人员：" + creator +"<br>";
+                        html = html + "<a href=\"javascript:modifyRecord(" + id + ")\">【修改记录】</a><a href=\"javascript:deleteRecord(" + id + ")\">【删除记录】</a><br>";
+                        html = html + "<br>";
+                        html = html + "<p>";
+                        console.log(html);
+                        count = count + 1;
+                    }
+                }
+            }
+            $("#record_list_div").html(html);
+        });
+    }
+    var getUrlParam=function(name){
+        //获取url中的参数
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+        var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+        if (r != null) return decodeURI(r[2]); return null; //返回参数值，如果是中文传递，就用decodeURI解决乱码，否则用unescape
+    }
+
+    function init(){
+        id=getUrlParam("id");
+        console.log(id);
+        getRecord(id);
+    }
+    init();
+    /*--------------------从后端获取数据 结束--------------------*/
+    /*--------------------向后端修改数据 开始--------------------*/
+    function setRecord(data){
+        console.log(data);
+        var url="../../device_modify";
+        $.post(url,data,function(res){
+            console.log(res);
+            var html="";
+            if(res.result_code==0){
+                html="<div>修改成功！<button type=\"button\" onclick='javascript:goDeviceList();'>返回列表</button></div>";
+            }else{
+                html="<div>修改失败！"+res.result_msg+"</div>";
+            }
+            $("#record_list_div").html(html);
+        });
+    }
+    /*--------------------向后端修改数据 结束--------------------*/
+    function goDeviceList(){
+        window.location.href="device_list.html";
+    }
+</script>
