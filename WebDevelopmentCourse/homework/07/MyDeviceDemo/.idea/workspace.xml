@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6ef33a96-4a8a-40d1-ae32-ae3b6aec6674" name="默认更改列表" comment="">
+      <change afterPath="$PROJECT_DIR$/../MyJQDemo/src/device/ServletAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../html/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../html/data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../html/helloWorld.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../html/web/05classWork/5classTest1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../html/web/05classWork/5classTest2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../html/web/firstHomeWork/frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../html/web/firstHomeWork/table.html" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="2f36NDcNvFJqCAEvTh4GFlA7Dhg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../crud-notepad" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6ef33a96-4a8a-40d1-ae32-ae3b6aec6674" name="默认更改列表" comment="" />
+      <created>1713017371636</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1713017371636</updated>
+      <workItem from="1713017374423" duration="1404000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="610" y="351" key="FileChooserDialogImpl" timestamp="1713018994451">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="610" y="351" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1713018994450" />
+  </component>
+</project>
