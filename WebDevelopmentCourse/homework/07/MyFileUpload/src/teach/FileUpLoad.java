@@ -45,7 +45,8 @@ public class FileUpLoad extends HttpServlet {
         DiskFileItemFactory factory = new DiskFileItemFactory();
         //获取文件需要上传到的路径
         //String path = "C:/upload";
-        String path = "C:/Program Files/Apache Software Foundation/Tomcat 8.5/webapps/file";
+       // String path1 = "C:/Program Files/Apache Software Foundation/Tomcat 8.5/webapps/file";
+        String path = "D:/upload";
 
         //如果没以下两行设置的话，上传大的 文件 会占用 很多内存，
         //设置暂时存放的 存储室 , 这个存储室，可以和 最终存储文件 的目录不同
@@ -60,8 +61,6 @@ public class FileUpLoad extends HttpServlet {
 
         //高水平的API文件上传处理
         ServletFileUpload upload = new ServletFileUpload(factory);
-
-
         try {
             //可以上传多个文件
             List<FileItem> list = (List<FileItem>)upload.parseRequest(request);
