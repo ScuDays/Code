@@ -41,6 +41,9 @@ License: You must have a valid license purchased only from themeforest(the above
     <link id="style_color" href="../../assets/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css"/>
     <link href="../../assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css"/>
     <!-- END THEME STYLES -->
+    <link rel="stylesheet" type="text/css" href="dataTables.bootstrap.css" />
+
+
     <link rel="shortcut icon" href="favicon.ico"/>
 </head>
 <!-- END HEAD -->
@@ -1355,10 +1358,41 @@ License: You must have a valid license purchased only from themeforest(the above
             <!-- BEGIN PAGE CONTENT-->
 
             <div class="row">
-
-
             </div>
-            <div class="row">
+
+            <!-- BEGIN PAGE CONTENT-->
+
+            <div class="row ">
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-primary" id="datatable_button" name="datatable_button">切换到DataTable</button>
+                    <button type="button" class="btn btn-primary"id="table_button" name="table_button">切换到自定义Table</button>
+                    <button type="button" class="btn btn-primary"id="bar_button" name="bar_button">切换到自定义大横条</button>
+                </div>
+            </div>
+
+            <div class="row" id="bar_tab">
+                <div class="col-md-6">
+                    AAAAAAAAAAAAAAAAA
+                </div>
+            </div>
+
+            <div class="row" id="datatable_tab">
+                <div class="col-md-6">
+                    <table class="table table-striped table-bordered table-hover datatable" id="record_list">
+                        <thead>
+                        <tr>
+                            <th class="table-checkbox"><input type="checkbox" class="group-checkable" data-set="#record_list .checkboxes" /></th>
+                            <th>设备ID</th>
+                            <th>设备名称</th>
+                            <th>创建人</th>
+                            <th>创建时间</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+            <div class="row display-none"id="table_tab" >
                 <div class="col-md-6">
                     <!-- BEGIN SAMPLE TABLE PORTLET-->
                     <div class="portlet box blue">
@@ -1382,9 +1416,9 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <table class="table table-bordered table-hover">
                                     <thead>
                                     <tr>
-                                        <th>
-                                            #
-                                        </th>
+<%--                                        <th>--%>
+<%--                                            #--%>
+<%--                                        </th>--%>
                                         <th>
                                             Class Name
                                         </th>
@@ -2119,6 +2153,8 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="device.js" type="text/javascript" charset="UTF-8"></script>
 
 
+<script type="text/javascript" src="jquery.dataTables.min.js"></script>
+
 
 </body>
 <!-- END BODY -->
@@ -2129,7 +2165,6 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
 <script>
-
     jQuery(document).ready(function() {
         // initiate layout and plugins
 
@@ -2141,7 +2176,6 @@ License: You must have a valid license purchased only from themeforest(the above
         var initPageControl = function () {
             getDeviceRecord();
         }
-
         $.post("../../device_file_servlet_action?action=get_device_record", function (json) {
             console.log(JSON.stringify(json));
             if (json.result_code == 0) {
@@ -2172,3 +2206,4 @@ License: You must have a valid license purchased only from themeforest(the above
     return {
         init: function () {
             initPageControl();
+

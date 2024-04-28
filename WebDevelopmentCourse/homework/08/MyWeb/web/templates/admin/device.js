@@ -60,7 +60,11 @@ var Page = function() {
 	var initDeviceListControlEvent=function(){
 		$("#help_button").click(function() {help();});
 		$('#add_button').click(function() {onAddRecord();});
+		$('#datatable_button').click(function() {onDatatableTab();});
+		$('#table_button').click(function() {onTableTab();});
+		$('#bar_button').click(function() {onBarTab();});
 	}
+
 	var initDeviceAddControlEvent=function(){
 		$("#help_button").click(function() {help();});
 		$('#add_button').click(function() {submitAddRecord();});
@@ -126,6 +130,7 @@ var Page = function() {
 	
 	var initDeviceRecordList=function(){
 		getDeviceRecordList();
+		getDeviceRecordDataTable();
 	}
 	var initDeviceMobileRecord=function(){
 		getDeviceMobileRecord();
@@ -148,6 +153,9 @@ var Page = function() {
 						html = html + "             </td>";
 						html = html + "             <td>";
 						html = html + "              " + record.device_id;
+						html = html + "             </td>";
+						html = html + "             <td>";
+						html = html + "              " + record.device_name;
 						html = html + "             </td>";
 						html = html + "             <td>";
 						html = html + "             <a href=\"javascript:Page.onModifyRecord(" + record.id + ")\">【修改记录】</a><a href=\"javascript:Page.onDeleteRecord(" + record.id + ")\">【删除记录】</a>";
@@ -233,6 +241,106 @@ var Page = function() {
 		$("#ajax_form").ajaxSubmit(options);
 	}
 	//Page return 开始
+
+	var getDeviceRecordDataTable=function(){
+		$('.datatable').dataTable({
+			"paging":true,
+			"searching":false,
+			"oLanguage": {
+				"aria": {
+					"sortAscending": ": activate to sort column ascending",
+					"sortDescending": ": activate to sort column descending"
+				},
+				"sProcessing":   "处理中...",
+				"sLengthMenu":   "_MENU_ 记录/页",
+				"sZeroRecords":  "没有匹配的记录",
+				"sInfo":         "显示第 _START_ 至 _END_ 项记录，共 _TOTAL_ 项",
+				"sInfoEmpty":    "显示第 0 至 0 项记录，共 0 项",
+				"sInfoFiltered": "(由 _MAX_ 项记录过滤)",
+				"sInfoPostFix":  "",
+				"sSearch":       "过滤:",
+				"oPaginate": {
+					"sFirst":    "首页",
+					"sPrevious": "上页",
+					"sNext":     "下页",
+					"sLast":     "末页"
+				}
+			},
+			"aoColumns": [{"mRender": function(data, type, full) {
+					sReturn = '<input type="checkbox" class="checkboxes" value="'+data+full.id+'"/>';
+					return sReturn;
+				},"orderable": false
+			},{
+				"mRender": function(data, type, full) {
+					sReturn = '<div>'+full.device_id+ '</div>';
+					return sReturn;
+				},"orderable": false
+			},{
+				"mRender": function(data, type, full) {
+					sReturn = '<div>'+full.device_name+ '</div>';
+					return sReturn;
+				},"orderable": false
+			},{
+				"mRender": function(data, type, full) {
+					sReturn = '<div>'+full.device_sub_type+ '</div>';
+					return sReturn;
+				},"orderable": false
+			},{
+				"mRender": function(data, type, full) {
+					sReturn = '<div>'+full.device_create_time+ '</div>';
+					return sReturn;
+				},"orderable": false
+			},{
+					"mRender": function(data, type, full) {
+						sReturn = '<div><a href="javascript:Page.onModifyRecord(' + full.id + ')">【修改记录】</a><a href="javascript:Page.onDeleteRecord('+ full.id +')">【删除记录】</a> </a><a href="javascript:Page.onViewRecord('+ full.id +')">【查看记录】</a></div>';
+						return sReturn;
+					},"orderable": false
+			}],
+			"aLengthMenu": [[5,10,15,20,25,40,50,-1],[5,10,15,20,25,40,50,"所有记录"]],
+			"fnDrawCallback": function(){$(".checkboxes").uniform();$(".group-checkable").uniform();},
+			//"sAjaxSource": "get_record.jsp"
+			//"data":data.aaData,			//这个用来显示不从后台交互获取数据的情况下，显示当前页面已经有的json数据
+			"sAjaxSource": "../../"+module+"_"+sub+"_servlet_action?action=get_device_record"
+		});
+		$('.datatable').find('.group-checkable').change(function () {
+			var set = jQuery(this).attr("data-set");
+			var checked = jQuery(this).is(":checked");
+			jQuery(set).each(function () {
+				if (checked) {
+					$(this).attr("checked", true);
+					$(this).parents('tr').addClass("active");
+				} else {
+					$(this).attr("checked", false);
+					$(this).parents('tr').removeClass("active");
+				}
+			});
+			jQuery.uniform.update(set);
+		});
+		$('.datatable').on('change', 'tbody tr .checkboxes', function () {
+			$(this).parents('tr').toggleClass("active");
+		});
+	};
+
+	$('#datatable_button').click(function() {onDatatableTab();});
+	$('#table_button').click(function() {onTableTab();});
+	$('#bar_button').click(function() {onBarTab();});
+	var onDatatableTab=function () {
+		$("#datatable_tab").show();
+		$("#table_tab").hide();
+		$("#bar_tab").hide();
+
+	}
+	var onTableTab=function () {
+		$("#datatable_tab").hide();
+		$("#table_tab").show();
+		$("#bar_tab").hide();
+
+	}
+	var onBarTab=function () {
+		$("#datatable_tab").hide();
+		$("#table_tab").hide();
+		$("#bar_tab").show();
+	}
 	return {
 		init: function() {
 			initPageControl();
