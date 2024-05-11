@@ -27,12 +27,15 @@ License: You must have a valid license purchased only from themeforest(the above
     <meta content="" name="description"/>
     <meta content="" name="author"/>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet"
+          type="text/css"/>
     <link href="../../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-    <link href="../../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet"
+          type="text/css"/>
     <link href="../../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <link href="../../assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
-    <link href="../../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet"
+          type="text/css"/>
     <!-- END GLOBAL MANDATORY STYLES -->
     <!-- BEGIN THEME STYLES -->
     <link href="../../assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
@@ -70,7 +73,8 @@ License: You must have a valid license purchased only from themeforest(the above
         </div>
         <!-- END LOGO -->
         <!-- BEGIN RESPONSIVE MENU TOGGLER -->
-        <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+        <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse"
+           data-target=".navbar-collapse">
         </a>
         <!-- END RESPONSIVE MENU TOGGLER -->
         <!-- BEGIN TOP NAVIGATION MENU -->
@@ -79,7 +83,8 @@ License: You must have a valid license purchased only from themeforest(the above
                 <!-- BEGIN NOTIFICATION DROPDOWN -->
                 <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
                 <li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
-                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                       data-close-others="true">
                         <i class="icon-bell"></i>
                         <span class="badge badge-default">
 					7 </span>
@@ -189,7 +194,8 @@ License: You must have a valid license purchased only from themeforest(the above
                 <!-- BEGIN INBOX DROPDOWN -->
                 <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
                 <li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
-                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                       data-close-others="true">
                         <i class="icon-envelope-open"></i>
                         <span class="badge badge-default">
 					4 </span>
@@ -279,7 +285,8 @@ License: You must have a valid license purchased only from themeforest(the above
                 <!-- BEGIN TODO DROPDOWN -->
                 <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
                 <li class="dropdown dropdown-extended dropdown-tasks" id="header_task_bar">
-                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                       data-close-others="true">
                         <i class="icon-calendar"></i>
                         <span class="badge badge-default">
 					3 </span>
@@ -298,7 +305,9 @@ License: You must have a valid license purchased only from themeforest(the above
 									<span class="percent">30%</span>
 									</span>
                                         <span class="progress">
-									<span style="width: 40%;" class="progress-bar progress-bar-success" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">40% Complete</span></span>
+									<span style="width: 40%;" class="progress-bar progress-bar-success"
+                                          aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"><span
+                                            class="sr-only">40% Complete</span></span>
 									</span>
                                     </a>
                                 </li>
@@ -309,7 +318,9 @@ License: You must have a valid license purchased only from themeforest(the above
 									<span class="percent">65%</span>
 									</span>
                                         <span class="progress">
-									<span style="width: 65%;" class="progress-bar progress-bar-danger" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">65% Complete</span></span>
+									<span style="width: 65%;" class="progress-bar progress-bar-danger"
+                                          aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"><span
+                                            class="sr-only">65% Complete</span></span>
 									</span>
                                     </a>
                                 </li>
@@ -320,7 +331,9 @@ License: You must have a valid license purchased only from themeforest(the above
 									<span class="percent">98%</span>
 									</span>
                                         <span class="progress">
-									<span style="width: 98%;" class="progress-bar progress-bar-success" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">98% Complete</span></span>
+									<span style="width: 98%;" class="progress-bar progress-bar-success"
+                                          aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"><span
+                                            class="sr-only">98% Complete</span></span>
 									</span>
                                     </a>
                                 </li>
@@ -331,7 +344,9 @@ License: You must have a valid license purchased only from themeforest(the above
 									<span class="percent">10%</span>
 									</span>
                                         <span class="progress">
-									<span style="width: 10%;" class="progress-bar progress-bar-warning" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">10% Complete</span></span>
+									<span style="width: 10%;" class="progress-bar progress-bar-warning"
+                                          aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"><span
+                                            class="sr-only">10% Complete</span></span>
 									</span>
                                     </a>
                                 </li>
@@ -342,7 +357,9 @@ License: You must have a valid license purchased only from themeforest(the above
 									<span class="percent">58%</span>
 									</span>
                                         <span class="progress">
-									<span style="width: 58%;" class="progress-bar progress-bar-info" aria-valuenow="58" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">58% Complete</span></span>
+									<span style="width: 58%;" class="progress-bar progress-bar-info" aria-valuenow="58"
+                                          aria-valuemin="0" aria-valuemax="100"><span
+                                            class="sr-only">58% Complete</span></span>
 									</span>
                                     </a>
                                 </li>
@@ -353,7 +370,9 @@ License: You must have a valid license purchased only from themeforest(the above
 									<span class="percent">85%</span>
 									</span>
                                         <span class="progress">
-									<span style="width: 85%;" class="progress-bar progress-bar-success" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">85% Complete</span></span>
+									<span style="width: 85%;" class="progress-bar progress-bar-success"
+                                          aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"><span
+                                            class="sr-only">85% Complete</span></span>
 									</span>
                                     </a>
                                 </li>
@@ -364,7 +383,9 @@ License: You must have a valid license purchased only from themeforest(the above
 									<span class="percent">38%</span>
 									</span>
                                         <span class="progress progress-striped">
-									<span style="width: 38%;" class="progress-bar progress-bar-important" aria-valuenow="18" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">38% Complete</span></span>
+									<span style="width: 38%;" class="progress-bar progress-bar-important"
+                                          aria-valuenow="18" aria-valuemin="0" aria-valuemax="100"><span
+                                            class="sr-only">38% Complete</span></span>
 									</span>
                                     </a>
                                 </li>
@@ -376,7 +397,8 @@ License: You must have a valid license purchased only from themeforest(the above
                 <!-- BEGIN USER LOGIN DROPDOWN -->
                 <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
                 <li class="dropdown dropdown-user">
-                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                       data-close-others="true">
                         <img alt="" class="img-circle" src="../../assets/admin/layout/img/avatar3_small.jpg"/>
                         <span class="username username-hide-on-mobile">
 					Nick </span>
@@ -473,64 +495,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     </form>
                     <!-- END RESPONSIVE QUICK SEARCH FORM -->
                 </li>
-                <li class="start ">
-                    <a href="javascript:;">
-                        <i class="icon-home"></i>
-                        <span class="title">Dashboard</span>
-                        <span class="arrow "></span>
-                    </a>
-                    <ul class="sub-menu">
-                        <li>
-                            <a href="index.html">
-                                <i class="icon-bar-chart"></i>
-                                Default Dashboard</a>
-                        </li>
-                        <li>
-                            <a href="index_2.html">
-                                <i class="icon-bulb"></i>
-                                New Dashboard #1</a>
-                        </li>
-                        <li>
-                            <a href="index_3.html">
-                                <i class="icon-graph"></i>
-                                New Dashboard #2</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <i class="icon-basket"></i>
-                        <span class="title">eCommerce</span>
-                        <span class="arrow "></span>
-                    </a>
-                    <ul class="sub-menu">
-                        <li>
-                            <a href="ecommerce_index.html">
-                                <i class="icon-home"></i>
-                                Dashboard</a>
-                        </li>
-                        <li>
-                            <a href="ecommerce_orders.html">
-                                <i class="icon-basket"></i>
-                                Orders</a>
-                        </li>
-                        <li>
-                            <a href="ecommerce_orders_view.html">
-                                <i class="icon-tag"></i>
-                                Order View</a>
-                        </li>
-                        <li>
-                            <a href="ecommerce_products.html">
-                                <i class="icon-handbag"></i>
-                                Products</a>
-                        </li>
-                        <li>
-                            <a href="ecommerce_products_edit.html">
-                                <i class="icon-pencil"></i>
-                                Product Edit</a>
-                        </li>
-                    </ul>
-                </li>
+
 
             </ul>
             <!-- END SIDEBAR MENU -->
@@ -541,7 +506,8 @@ License: You must have a valid license purchased only from themeforest(the above
     <div class="page-content-wrapper">
         <div class="page-content">
             <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
-            <div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                 aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -573,17 +539,23 @@ License: You must have a valid license purchased only from themeforest(the above
 						<span>
 						THEME COLOR </span>
                         <ul>
-                            <li class="color-default current tooltips" data-style="default" data-container="body" data-original-title="Default">
+                            <li class="color-default current tooltips" data-style="default" data-container="body"
+                                data-original-title="Default">
                             </li>
-                            <li class="color-darkblue tooltips" data-style="darkblue" data-container="body" data-original-title="Dark Blue">
+                            <li class="color-darkblue tooltips" data-style="darkblue" data-container="body"
+                                data-original-title="Dark Blue">
                             </li>
-                            <li class="color-blue tooltips" data-style="blue" data-container="body" data-original-title="Blue">
+                            <li class="color-blue tooltips" data-style="blue" data-container="body"
+                                data-original-title="Blue">
                             </li>
-                            <li class="color-grey tooltips" data-style="grey" data-container="body" data-original-title="Grey">
+                            <li class="color-grey tooltips" data-style="grey" data-container="body"
+                                data-original-title="Grey">
                             </li>
-                            <li class="color-light tooltips" data-style="light" data-container="body" data-original-title="Light">
+                            <li class="color-light tooltips" data-style="light" data-container="body"
+                                data-original-title="Light">
                             </li>
-                            <li class="color-light2 tooltips" data-style="light2" data-container="body" data-html="true" data-original-title="Light 2">
+                            <li class="color-light2 tooltips" data-style="light2" data-container="body" data-html="true"
+                                data-original-title="Light 2">
                             </li>
                         </ul>
                     </div>
@@ -683,7 +655,8 @@ License: You must have a valid license purchased only from themeforest(the above
                 </ul>
                 <div class="page-toolbar">
                     <div class="btn-group pull-right">
-                        <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
+                        <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle"
+                                data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
                             Actions <i class="fa fa-angle-down"></i>
                         </button>
                         <ul class="dropdown-menu pull-right" role="menu">
@@ -1718,7 +1691,8 @@ License: You must have a valid license purchased only from themeforest(the above
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active page-quick-sidebar-chat" id="quick_sidebar_tab_1">
-                        <div class="page-quick-sidebar-chat-users" data-rail-color="#ddd" data-wrapper-class="page-quick-sidebar-list">
+                        <div class="page-quick-sidebar-chat-users" data-rail-color="#ddd"
+                             data-wrapper-class="page-quick-sidebar-list">
                             <h3 class="list-heading">Staff</h3>
                             <ul class="media-list list-items">
                                 <li class="media">
@@ -1819,7 +1793,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                     </div>
                                 </li>
                                 <li class="media">
-                                    <img class="media-object" src="../../assets/admin/layout/img/avatar10.jpg" alt="...">
+                                    <img class="media-object" src="../../assets/admin/layout/img/avatar10.jpg"
+                                         alt="...">
                                     <div class="media-body">
                                         <h4 class="media-heading">Irina Savikova</h4>
                                         <div class="media-heading-sub">
@@ -1831,7 +1806,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <div class="media-status">
                                         <span class="badge badge-danger">4</span>
                                     </div>
-                                    <img class="media-object" src="../../assets/admin/layout/img/avatar11.jpg" alt="...">
+                                    <img class="media-object" src="../../assets/admin/layout/img/avatar11.jpg"
+                                         alt="...">
                                     <div class="media-body">
                                         <h4 class="media-heading">Maria Gomez</h4>
                                         <div class="media-heading-sub">
@@ -1847,7 +1823,8 @@ License: You must have a valid license purchased only from themeforest(the above
                         <div class="page-quick-sidebar-item">
                             <div class="page-quick-sidebar-chat-user">
                                 <div class="page-quick-sidebar-nav">
-                                    <a href="javascript:;" class="page-quick-sidebar-back-to-list"><i class="icon-arrow-left"></i>Back</a>
+                                    <a href="javascript:;" class="page-quick-sidebar-back-to-list"><i
+                                            class="icon-arrow-left"></i>Back</a>
                                 </div>
                                 <div class="page-quick-sidebar-chat-user-messages">
                                     <div class="post out">
@@ -1945,7 +1922,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <div class="input-group">
                                         <input type="text" class="form-control" placeholder="Type a message here...">
                                         <div class="input-group-btn">
-                                            <button type="button" class="btn blue"><i class="icon-paper-clip"></i></button>
+                                            <button type="button" class="btn blue"><i class="icon-paper-clip"></i>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -1966,7 +1944,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                             </div>
                                             <div class="cont-col2">
                                                 <div class="desc">
-                                                    You have 4 pending tasks. <span class="label label-sm label-warning ">
+                                                    You have 4 pending tasks. <span
+                                                        class="label label-sm label-warning ">
 													Take action <i class="fa fa-share"></i>
 													</span>
                                                 </div>
@@ -2076,7 +2055,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                             </div>
                                             <div class="cont-col2">
                                                 <div class="desc">
-                                                    Web server hardware needs to be upgraded. <span class="label label-sm label-warning">
+                                                    Web server hardware needs to be upgraded. <span
+                                                        class="label label-sm label-warning">
 													Overdue </span>
                                                 </div>
                                             </div>
@@ -2124,7 +2104,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                             </div>
                                             <div class="cont-col2">
                                                 <div class="desc">
-                                                    You have 4 pending tasks. <span class="label label-sm label-warning ">
+                                                    You have 4 pending tasks. <span
+                                                        class="label label-sm label-warning ">
 													Take action <i class="fa fa-share"></i>
 													</span>
                                                 </div>
@@ -2234,7 +2215,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                             </div>
                                             <div class="cont-col2">
                                                 <div class="desc">
-                                                    Web server hardware needs to be upgraded. <span class="label label-sm label-default ">
+                                                    Web server hardware needs to be upgraded. <span
+                                                        class="label label-sm label-default ">
 													Overdue </span>
                                                 </div>
                                             </div>
@@ -2277,19 +2259,30 @@ License: You must have a valid license purchased only from themeforest(the above
                             <h3 class="list-heading">General Settings</h3>
                             <ul class="list-items borderless">
                                 <li>
-                                    Enable Notifications <input type="checkbox" class="make-switch" checked data-size="small" data-on-color="success" data-on-text="ON" data-off-color="default" data-off-text="OFF">
+                                    Enable Notifications <input type="checkbox" class="make-switch" checked
+                                                                data-size="small" data-on-color="success"
+                                                                data-on-text="ON" data-off-color="default"
+                                                                data-off-text="OFF">
                                 </li>
                                 <li>
-                                    Allow Tracking <input type="checkbox" class="make-switch" data-size="small" data-on-color="info" data-on-text="ON" data-off-color="default" data-off-text="OFF">
+                                    Allow Tracking <input type="checkbox" class="make-switch" data-size="small"
+                                                          data-on-color="info" data-on-text="ON"
+                                                          data-off-color="default" data-off-text="OFF">
                                 </li>
                                 <li>
-                                    Log Errors <input type="checkbox" class="make-switch" checked data-size="small" data-on-color="danger" data-on-text="ON" data-off-color="default" data-off-text="OFF">
+                                    Log Errors <input type="checkbox" class="make-switch" checked data-size="small"
+                                                      data-on-color="danger" data-on-text="ON" data-off-color="default"
+                                                      data-off-text="OFF">
                                 </li>
                                 <li>
-                                    Auto Sumbit Issues <input type="checkbox" class="make-switch" data-size="small" data-on-color="warning" data-on-text="ON" data-off-color="default" data-off-text="OFF">
+                                    Auto Sumbit Issues <input type="checkbox" class="make-switch" data-size="small"
+                                                              data-on-color="warning" data-on-text="ON"
+                                                              data-off-color="default" data-off-text="OFF">
                                 </li>
                                 <li>
-                                    Enable SMS Alerts <input type="checkbox" class="make-switch" checked data-size="small" data-on-color="success" data-on-text="ON" data-off-color="default" data-off-text="OFF">
+                                    Enable SMS Alerts <input type="checkbox" class="make-switch" checked
+                                                             data-size="small" data-on-color="success" data-on-text="ON"
+                                                             data-off-color="default" data-off-text="OFF">
                                 </li>
                             </ul>
                             <h3 class="list-heading">System Settings</h3>
@@ -2303,16 +2296,24 @@ License: You must have a valid license purchased only from themeforest(the above
                                     </select>
                                 </li>
                                 <li>
-                                    Failed Email Attempts <input class="form-control input-inline input-sm input-small" value="5"/>
+                                    Failed Email Attempts <input class="form-control input-inline input-sm input-small"
+                                                                 value="5"/>
                                 </li>
                                 <li>
-                                    Secondary SMTP Port <input class="form-control input-inline input-sm input-small" value="3560"/>
+                                    Secondary SMTP Port <input class="form-control input-inline input-sm input-small"
+                                                               value="3560"/>
                                 </li>
                                 <li>
-                                    Notify On System Error <input type="checkbox" class="make-switch" checked data-size="small" data-on-color="danger" data-on-text="ON" data-off-color="default" data-off-text="OFF">
+                                    Notify On System Error <input type="checkbox" class="make-switch" checked
+                                                                  data-size="small" data-on-color="danger"
+                                                                  data-on-text="ON" data-off-color="default"
+                                                                  data-off-text="OFF">
                                 </li>
                                 <li>
-                                    Notify On SMTP Error <input type="checkbox" class="make-switch" checked data-size="small" data-on-color="warning" data-on-text="ON" data-off-color="default" data-off-text="OFF">
+                                    Notify On SMTP Error <input type="checkbox" class="make-switch" checked
+                                                                data-size="small" data-on-color="warning"
+                                                                data-on-text="ON" data-off-color="default"
+                                                                data-off-text="OFF">
                                 </li>
                             </ul>
                             <div class="inner-content">
@@ -2330,7 +2331,10 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN FOOTER -->
 <div class="page-footer">
     <div class="page-footer-inner">
-        2014 &copy; Metronic by keenthemes. <a href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" title="Purchase Metronic just for 27$ and get lifetime updates for free" target="_blank">Purchase Metronic!</a>
+        2014 &copy; Metronic by keenthemes. <a
+            href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes"
+            title="Purchase Metronic just for 27$ and get lifetime updates for free" target="_blank">Purchase
+        Metronic!</a>
     </div>
     <div class="scroll-to-top">
         <i class="icon-arrow-up"></i>
@@ -2348,7 +2352,8 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
 <script src="../../assets/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
 <script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="../../assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"
+        type="text/javascript"></script>
 <script src="../../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
 <script src="../../assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
 <script src="../../assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
@@ -2360,7 +2365,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="../../assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
 <script src="../../assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
 <script>
-    jQuery(document).ready(function() {
+    jQuery(document).ready(function () {
         // initiate layout and plugins
         Metronic.init(); // init metronic core components
         Layout.init(); // init current layout
@@ -2368,4 +2373,83 @@ License: You must have a valid license purchased only from themeforest(the above
         Demo.init(); // init demo features
         getMenuRecord();
     });
-    funtion  getMenuRe
+
+    function getMenuRecord() {
+        var url = "../../device_file_servlet_action";
+        var data = {"action": "get_menu_record", "role_id": "teacher"};
+        $.post(url, data, function (res) {
+            console.log(res);
+            showMenuRecord(res);
+        })
+
+    }
+    function showMenuRecord(res) {
+        var html = "";
+        var list = res.aaData;
+        var sub1 = false;
+        var sub2 = false;
+        var count1 = 0;
+        var count2 = 0;
+        if (list != undefined && list.length > 0) {
+            for (var i = 0; i < list.length; i++) {
+                var record = list[i];
+                var itemId = record.item_id;
+                var itemName = record.item_name;
+                var itemUrl = record.item_url;
+                console.log("父ID:" + record.parent_id + "---名称：" + record.item_name);
+
+                if (record.parent_id == "0") {
+                    if (sub1) {
+                        if (sub2) {
+                            html = html + "            </ul>";
+                            html = html + "          </li>";
+                            sub2 = false;
+                        } else {
+                            html = html + "          </li>";
+                        }
+                        sub1 = false;
+                    }
+                    html = html + "  <li class=\"start \">";
+                    html = html + "  <a href=\"javascript:;\">";
+                    html = html + "  <i class=\"icon-home\"></i>";
+                    html = html + "  <span class=\"title\">" + itemName + "</span>";
+                    html = html + "  <span class=\"arrow \"></span>";
+                    html = html + "  </a>";
+                    sub1 = true;
+                    count1 = count1 + 1;
+                } else {
+                    if (sub2) {
+                        html = html + "          <li>";
+                        html = html + "             <a href=\"" + itemUrl + "\">";
+                        html = html + "                <i class=\"icon-bar-chart\"></i>";
+                        html = html + "                " + itemName + "</a>";
+                        html = html + "          </li>";
+                    } else {
+                        html = html + "          <ul class=\"sub-menu\">";
+                        html = html + "              <li>";
+                        html = html + "                  <a href=\"" + itemUrl + "\">";
+                        html = html + "                      <i class=\"icon-bar-chart\"></i>";
+                        html = html + "                         " + itemName + "</a>";
+                        html = html + "              </li>";
+                        sub2 = true;
+                    }
+                    count2 = count2 + 1;
+                }
+            }
+            if (sub2) {
+                html = html + "            </ul>";
+                sub2 = false;
+            }
+            if (sub1) {
+                html = html + "          </li>";
+                sub1 = false;
+            }
+        }
+        $(".page-sidebar-menu").html( $(".page-sidebar-menu").html() + html);
+    }
+
+
+</script>
+</body>
+<!-- END BODY -->
+</html>

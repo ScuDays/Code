@@ -186,4 +186,17 @@ public class DeviceDao {
 		//}
 		/*--------------------循环 结束--------------------*/
     }
+
+	public void getMenuRecord(Data data, JSONObject json) throws JSONException, SQLException {
+		//构造sql语句，根据传递过来的查询条件参数
+		String roleId = data.getParam().has("role_id")?data.getParam().getString("role_id"):null;
+		if(roleId != null) {
+			String sql = "SELECT a.*,b.role_id from menu_tree a,menu_view b WHERE\n" +
+					"a.item_id=b.item_id and\n" +
+					"b.role_id='teacher' order by a.item_id";
+			showDebug("生成的SQL语句是：" + sql);
+			data.getParam().put("sql", sql);
+			queryRecord(data, json);
+		}
+	}
 }

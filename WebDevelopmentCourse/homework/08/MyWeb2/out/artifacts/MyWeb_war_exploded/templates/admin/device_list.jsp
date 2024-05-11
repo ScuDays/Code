@@ -2150,60 +2150,16 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="../../assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
 <script src="../../assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
 <script src="../../assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
-<script src="device.js" type="text/javascript" charset="UTF-8"></script>
-
-
 <script type="text/javascript" src="jquery.dataTables.min.js"></script>
 
-
+<!-- 通过device.js来实现执行相应的图表以及数据库查询-->
+<script src="device.js" type="text/javascript" charset="UTF-8"></script>
 </body>
 <!-- END BODY -->
-
-
 <input type="hidden" id="page_id" name="page_id" value="device_list">
 </html>
 
 
-<script>
-    jQuery(document).ready(function() {
-        // initiate layout and plugins
 
-    });
-    var Page = function () {
 
-    var getDeviceRecordList=function() {
-
-        var initPageControl = function () {
-            getDeviceRecord();
-        }
-        $.post("../../device_file_servlet_action?action=get_device_record", function (json) {
-            console.log(JSON.stringify(json));
-            if (json.result_code == 0) {
-                var list = json.aaData;
-                var html = "";
-                if (list != undefined && list.length > 0) {
-                    for (var i = 0; i < list.length; i++) {
-                        var record = list[i];
-                        html = html + "              <tr class=\"active\">";
-                        html = html + "             <td>";
-                        html = html + "              " + i;
-                        html = html + "             </td>";
-                        html = html + "             <td>";
-                        html = html + "              " + record.device_id;
-                        html = html + "             </td>";
-                        html = html + "             <td>";
-                        html = html + "             <a href=\"javascript:Page.onModifyRecord(" + record.id + ")\">【修改记录】</a><a href=\"javascript:Page.onDeleteRecord(" + record.id + ")\">【删除记录】</a>";
-                        html = html + "             </td>";
-                        html = html + "              </tr>";
-                    }
-                }
-                alert(1);
-                $("#record_table_content_div").html(html);
-            }
-        })
-
-    }
-    return {
-        init: function () {
-            initPageControl();
 

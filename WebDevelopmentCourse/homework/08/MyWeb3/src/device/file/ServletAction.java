@@ -136,6 +136,14 @@ public class ServletAction extends HttpServlet {
 					e.printStackTrace();
 				}
 			}
+			if(action.equals("get_menu_record")){
+				actionOk=true;
+				try {
+					getMenuRecord(request, response, json);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
 			try {
 				responseBack(request,response,data,json);
 			} catch (JSONException e) {
@@ -331,4 +339,9 @@ public class ServletAction extends HttpServlet {
 		dao.saveUploadFileRecord(json,data);
 	}
 	/*========================================上传文件函数 结束========================================*/
+
+	private void getMenuRecord(HttpServletRequest request, HttpServletResponse response,JSONObject json) throws JSONException, SQLException {
+		DeviceDao dao=new DeviceDao();
+		dao.getMenuRecord(data,json);
+	}
 }
