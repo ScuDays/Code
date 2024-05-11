@@ -1369,7 +1369,6 @@ License: You must have a valid license purchased only from themeforest(the above
                     <button type="button" class="btn btn-primary"id="bar_button" name="bar_button">切换到自定义大横条</button>
                 </div>
             </div>
-
             <div class="row" id="bar_tab">
                 <div class="col-md-6">
                     AAAAAAAAAAAAAAAAA
@@ -1392,6 +1391,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     </table>
                 </div>
             </div>
+
             <div class="row display-none"id="table_tab" >
                 <div class="col-md-6">
                     <!-- BEGIN SAMPLE TABLE PORTLET-->
@@ -2156,6 +2156,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="device.js" type="text/javascript" charset="UTF-8"></script>
 </body>
 <!-- END BODY -->
+
 <input type="hidden" id="page_id" name="page_id" value="device_list">
 </html>
 

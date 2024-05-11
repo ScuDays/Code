@@ -103,10 +103,9 @@ public class FileUpLoad extends HttpServlet {
 
                     //手动写的
                     OutputStream out = new FileOutputStream(new File(path,filename));
-
                     InputStream in = item.getInputStream() ;
                     HttpSession session = request.getSession();
-                    session.setAttribute("url1", path + "/" + filename);
+                    session.setAttribute("url1", "/upload/" + filename);
                     int length = 0 ;
                     byte [] buf = new byte[1024] ;
 
