@@ -85,6 +85,7 @@
             <!-- BEGIN PAGE CONTENT-->
 
             <%--页面开始========================================================--%>
+            <input type="hidden" id="page_id" name="page_id" value="device_list">
             <!-- BEGIN PAGE CONTENT-->
             <div class="row ">
                 <div class="col-md-6">
@@ -189,7 +190,7 @@
 </body>
 <!-- END BODY -->
 
-<input type="hidden" id="page_id" name="page_id" value="device_list">
+
 </html>
 
 
