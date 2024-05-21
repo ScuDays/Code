@@ -93,6 +93,7 @@
                     <button type="button" class="btn btn-primary" id="query_button" name="query_button">查询</button>
                     <button type="button" class="btn btn-primary" id="export_button" name="export_button">导出</button>
                     <button type="button" class="btn btn-primary" id="print_button" name="print_button">Table打印</button>
+                    <button type="button" class="btn btn-primary" id="statistics_button" name="statistics_button">统计</button>
                 </div>
             </div>
             <div class="row ">
@@ -201,11 +202,11 @@
                                     </tr>
                                     </thead>
                                     <tbody id="record_table_content_div" name="record_table_content_div">
-
                                     </tbody>
                                 </table>
                             </div>
                         </div>
+
                     </div>
                     <!-- END SAMPLE TABLE PORTLET-->
                 </div>

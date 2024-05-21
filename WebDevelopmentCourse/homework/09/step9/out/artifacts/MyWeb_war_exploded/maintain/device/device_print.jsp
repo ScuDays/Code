@@ -18,7 +18,7 @@
     <meta content="" name="author"/>
 
     <%@include file="../../home/frame/frame_style.jsp"%>
-    <link rel="stylesheet" type="text/css" href="dataTables.bootstrap.css" />
+<%--    <link rel="stylesheet" type="text/css" href="dataTables.bootstrap.css" />--%>
 
     <link rel="shortcut icon" href="favicon.ico"/>
 </head>
@@ -32,7 +32,7 @@
 </div>
 <!-- BEGIN CONTAINER -->
 <div class="page-container">
-    <%@include file="../../home/frame/frame_left_sidebar.jsp"%>
+<%--    <%@include file="../../home/frame/frame_left_sidebar.jsp"%>--%>
     <!-- BEGIN CONTENT -->
     <div class="page-content-wrapper">
         <div class="page-content">
@@ -43,25 +43,25 @@
                     设备信息<small>管理设备信息表</small>
             </h3>
             <div class="page-bar">
-                <ul class="page-breadcrumb">
-                    <li>
-                        <i class="fa fa-home"></i>
-                        <a href="index.html">Home</a>
-                        <i class="fa fa-angle-right"></i>
-                    </li>
-                    <li>
-                        <a href="#">Data Tables</a>
-                        <i class="fa fa-angle-right"></i>
-                    </li>
-                    <li>
-                        <a href="#">Basic Datatables</a>
-                    </li>
-                </ul>
+<%--                <ul class="page-breadcrumb">--%>
+<%--                    <li>--%>
+<%--                        <i class="fa fa-home"></i>--%>
+<%--                        <a href="index.html">Home</a>--%>
+<%--                        <i class="fa fa-angle-right"></i>--%>
+<%--                    </li>--%>
+<%--                    <li>--%>
+<%--                        <a href="#">Data Tables</a>--%>
+<%--                        <i class="fa fa-angle-right"></i>--%>
+<%--                    </li>--%>
+<%--                    <li>--%>
+<%--                        <a href="#">Basic Datatables</a>--%>
+<%--                    </li>--%>
+<%--                </ul>--%>
                 <div class="page-toolbar">
                     <div class="btn-group pull-right">
-                        <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
-                            Actions <i class="fa fa-angle-down"></i>
-                        </button>
+<%--                        <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">--%>
+<%--                            Actions <i class="fa fa-angle-down"></i>--%>
+<%--                        </button>--%>
                         <ul class="dropdown-menu pull-right" role="menu">
                             <li>
                                 <a href="#">Action</a>
@@ -93,37 +93,70 @@
 
                 </div>
             </div>
-            <div class="row" id="bar_tab">
-                <div class="col-md-6">
-                    <!-- Nested media object -->
-                        <div id = "record_bar_div" name = "record_bar_div">
-                            <div class="portlet-body form">
-                                <form class="form-horizontal" role="form">
+<%--            添加的表--%>
 
-                                    <div class="form-body">
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">设备编号</label>
-                                            <div class="col-md-9">
-                                                <input type="text" class="form-control" placeholder="Enter text" id="device_id" name="device_id">
-
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">设备名称</label>
-                                            <div class="col-md-9">
-                                                <input type="text" class="form-control" placeholder="Enter text" id="device_name" name="device_name">
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-
-                        </div>
+            <div class="portlet-body">
+                <div class="table-scrollable">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <%--                                        <th>--%>
+                            <%--                                            #--%>
+                            <%--                                        </th>--%>
+                                <th style="background-color: #f2f2f2; color: #00ff00;">
+                                    事件id
+                                </th>
+                                <th style="background-color: #f2f2f2; color: #ebccd1;">
+                                    事件
+                                </th>
+                                <th style="background-color: #f2f2f2; color: #333;">
+                                    创建人
+                                </th>
+                                <th style="background-color: #f2f2f2; color: #333;">
+                                    创建时间
+                                </th>
+                        </tr>
+                        </thead>
+                        <tbody id="record_print_div" name="record_print_div" >
+                        </tbody>
+                    </table>
                 </div>
-                    <!--end media-->
             </div>
+    <%--            添加的表结束--%>
+</div>
+<!-- END PAGE CONTENT-->
+</div>
+<%--            <div class="row" id="bar_tab">--%>
+<%--                <div class="col-md-6">--%>
+<%--                    <!-- Nested media object -->--%>
+<%--                        <div id = "record_bar_div" name = "record_bar_div">--%>
+<%--                            <div class="portlet-body form">--%>
+<%--                                <form class="form-horizontal" role="form">--%>
+
+<%--                                    <div class="form-body">--%>
+<%--                                        <div class="form-group">--%>
+<%--                                            <label class="col-md-3 control-label">设备编号</label>--%>
+<%--                                            <div class="col-md-9">--%>
+<%--                                                <input type="text" class="form-control" placeholder="Enter text" id="device_id" name="device_id">--%>
+
+<%--                                            </div>--%>
+<%--                                        </div>--%>
+
+<%--                                        <div class="form-group">--%>
+<%--                                            <label class="col-md-3 control-label">设备名称</label>--%>
+<%--                                            <div class="col-md-9">--%>
+<%--                                                <input type="text" class="form-control" placeholder="Enter text" id="device_name" name="device_name">--%>
+
+<%--                                            </div>--%>
+<%--                                        </div>--%>
+<%--                                    </div>--%>
+<%--                                </form>--%>
+<%--                            </div>--%>
+
+<%--                        </div>--%>
+<%--                </div>--%>
+<%--                    <!--end media-->--%>
+<%--            </div>--%>
             <%--页面头结束========================================================--%>
             <!-- END PAGE CONTENT-->
         </div>

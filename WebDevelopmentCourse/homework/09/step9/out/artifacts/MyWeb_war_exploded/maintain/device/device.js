@@ -34,10 +34,54 @@ var Page = function () {
         if (pageId == "device_print") {
             initDevicePrint();
         }
+        if (pageId == "device_statistics") {
+            initDeviceStatistics();
+        }
     };
     /*----------------------------------------入口函数  结束----------------------------------------*/
     var columnsData = undefined;
     var recordResult = undefined;
+    var chartData = [{
+            "year": 2009,
+            "income": 23.5,
+            "expenses": 18.1
+        }, {
+            "year": 2010,
+            "income": 26.2,
+            "expenses": 22.8
+        }, {
+            "year": 2011,
+            "income": 30.1,
+            "expenses": 23.9
+        }, {
+            "year": 2012,
+            "income": 29.5,
+            "expenses": 25.1
+        }, {
+            "year": 2013,
+            "income": 30.6,
+            "expenses": 27.2,
+        }, {
+            "year": 2014,
+            "income": 34.1,
+            "expenses": 29.9,
+        }, {
+        "year": 123,
+        "income": 53,
+        "expenses": 29.9,
+    }, {
+        "year": 234,
+        "income": 345,
+        "expenses": 29.9,
+    }, {
+        "year": 345,
+        "income": 34.1,
+        "expenses": 29.9,
+    }, {
+        "year": 567,
+        "income": 34.1,
+        "expenses": 29.9,
+    }];
     /*----------------------------------------业务函数  开始----------------------------------------*/
     /*------------------------------针对各个页面的入口  开始------------------------------*/
     var initDeviceList = function () {
@@ -64,6 +108,13 @@ var Page = function () {
     var initDevicePrint=function () {
         initDevicePrintControlEvent();
         initDeviceRecordPrint();
+    }
+
+    var initDeviceStatistics=function () {
+        $.ajaxSettings.async = false;
+        initDeviceStatisticsRecord();
+        $.ajaxSettings.async = true;
+        initBarChart();
     }
     /*------------------------------针对各个页面的入口 结束------------------------------*/
     var getUrlParam = function (name) {
@@ -104,6 +155,9 @@ var Page = function () {
         });
         $('#print_button').click(function () {
             onPrintRecord();
+        });
+        $('#statistics_button').click(function () {
+            onStatisticsRecord();
         });
     }
 
@@ -160,24 +214,173 @@ var Page = function () {
         })
     }
      var initDeviceRecordPrint = function () {
-        var id = getUrlParam("id");
-        var data = {};
-        data.action = "get_device_record";
-        data.id = id;
-        $.post("../../" + module + "_" + sub + "_servlet_action", data, function (json) {
-            console.log(JSON.stringify(json));
-            if (json.result_code == 0) {
-                var list = json.aaData;
-                if (list != undefined && list.length > 0) {
-                    for (var i = 0; i < list.length; i++) {
-                        var record = list[i];
-                        $("#device_id").val(record.device_id);
-                        $("#device_name").val(record.device_name);
-                    }
-                }
-            }
-        })
-    }
+         var data={};
+         data.id=$("#record_query_setup #id").val();
+         data.device_id=$("#record_query_setup #device_id").val();
+         data.device_name=$("#record_query_setup #device_name").val();
+         $.post("../../" + module + "_" + sub + "_servlet_action?action=get_device_record", data,function (json) {
+             console.log(JSON.stringify(json));
+             if (json.result_code == 0) {
+                 var list = json.aaData;
+                 var html = "";
+                 if (list != undefined && list.length > 0) {
+                     for (var i = 0; i < list.length; i++) {
+                         var record = list[i];
+                         html = html + "              <tr class=\"active\">";
+                         html = html + "             <td>";
+                         html = html + "              " + i;
+                         html = html + "             </td>";
+                         html = html + "             <td>";
+                         html = html + "              " + record.device_id;
+                         html = html + "             </td>";
+                         html = html + "             <td>";
+                         html = html + "              " + record.device_name;
+                         html = html + "             </td>";
+                         html = html + "             <td>";
+                         html = html + "             <a href=\"javascript:Page.onModifyRecord(" + record.id + ")\">【修改记录】</a><a href=\"javascript:Page.onDeleteRecord(" + record.id + ")\">【删除记录】</a>";
+                         html = html + "             </td>";
+                         html = html + "              </tr>";
+                     }
+                 }
+                 $("#record_print_div").html(html);
+             }
+         })
+
+     }
+     var initDeviceStatisticsRecord=function () {
+         var data={};
+         data.id=$("#record_query_setup #id").val();
+         data.device_id=$("#record_query_setup #device_id").val();
+         data.device_name=$("#record_query_setup #device_name").val();
+         $.post("../../" + module + "_" + sub + "_servlet_action?action=get_device_record", data,function (json){
+
+         // var url = "../../device_file_servlet_action";
+         // var data = {"action":"get_gps_receive_count_by_hour"};
+         // $.post(url, data, function(json){
+             var html="";
+             if(json.result_code==0){
+                 console.log(JSON.stringify(json));
+                 var list=json.aaData;
+                 if(list!=undefined && list.length>0){
+                    // changeResultDataToChartData(list, chartData);
+                     console.log(JSON.stringify(chartData));
+                 }
+             } else {
+                 alert("[initDeviceStatisticRecord]与后端交互错误！" + json.result_msg);
+             }
+         });
+
+     }
+
+     var changeResultDataToChartData = function(list, chartData) {
+        for(var i=0; i < list.length; i++){
+            list[i].id = i;
+            var json={"year":list[i].id,"income":list[i].id+1,"expenses":list[i].id+5};
+            chartData.push(json);
+        }
+
+     }
+     var  initBarChart= function () {
+         var chart = AmCharts.makeChart("chart_1", {
+             "type": "serial",
+             "theme": "light",
+             "pathToImages": Metronic.getGlobalPluginsPath() + "amcharts/amcharts/images/",
+             "autoMargins": false,
+             "marginLeft": 30,
+             "marginRight": 8,
+             "marginTop": 10,
+             "marginBottom": 26,
+
+             "fontFamily": 'Open Sans',
+             "color":    '#888',
+
+             "dataProvider": [{
+                 "year": 2009,
+                 "income": 23.5,
+                 "expenses": 18.1
+             }, {
+                 "year": 2010,
+                 "income": 26.2,
+                 "expenses": 22.8
+             }, {
+                 "year": 2011,
+                 "income": 30.1,
+                 "expenses": 23.9
+             }, {
+                 "year": 2012,
+                 "income": 29.5,
+                 "expenses": 25.1
+             }, {
+                 "year": 2013,
+                 "income": 30.6,
+                 "expenses": 27.2,
+                 "dashLengthLine": 5
+             }, {
+                 "year": 2014,
+                 "income": 34.1,
+                 "expenses": 29.9,
+                 "dashLengthColumn": 5,
+                 "alpha": 0.2,
+                 "additional": "(projection)"
+             },{
+                 "year": 123,
+                 "income": 53,
+                 "expenses": 29.9,
+             }, {
+                 "year": 234,
+                 "income": 345,
+                 "expenses": 29.9,
+             }, {
+                 "year": 345,
+                 "income": 34.1,
+                 "expenses": 29.9,
+             }, {
+                 "year": 567,
+                 "income": 34.1,
+                 "expenses": 29.9,
+             }],
+             "valueAxes": [{
+                 "axisAlpha": 0,
+                 "position": "left"
+             }],
+             "startDuration": 1,
+             "graphs": [{
+                 "alphaField": "alpha",
+                 "balloonText": "<span style='font-size:13px;'>[[title]] in [[category]]:<b>[[value]]</b> [[additional]]</span>",
+                 "dashLengthField": "dashLengthColumn",
+                 "fillAlphas": 1,
+                 "title": "Income",
+                 "type": "column",
+                 "valueField": "income"
+             }, {
+                 "balloonText": "<span style='font-size:13px;'>[[title]] in [[category]]:<b>[[value]]</b> [[additional]]</span>",
+                 "bullet": "round",
+                 "dashLengthField": "dashLengthLine",
+                 "lineThickness": 3,
+                 "bulletSize": 7,
+                 "bulletBorderAlpha": 1,
+                 "bulletColor": "#FFFFFF",
+                 "useLineColorForBulletBorder": true,
+                 "bulletBorderThickness": 3,
+                 "fillAlphas": 0,
+                 "lineAlpha": 1,
+                 "title": "Expenses",
+                 "valueField": "expenses"
+             }],
+             "categoryField": "year",
+             "categoryAxis": {
+                 "gridPosition": "start",
+                 "axisAlpha": 0,
+                 "tickLength": 0
+             }
+         });
+
+         $('#chart_1').closest('.portlet').find('.fullscreen').click(function() {
+             chart.invalidateSize();
+         });
+     }
+
+
     var onAddRecord = function () {
         //window.location.href = "device_add.jsp";
         // window.location.href = "device_modify.jsp?id=" + id;
@@ -549,6 +752,9 @@ var Page = function () {
         window.location.href="device_print.jsp?id="+id;
     }
 
+    var onStatisticsRecord=function (id) {
+        window.location.href="device_statistics.jsp";
+    }
 
     return {
         init: function () {
