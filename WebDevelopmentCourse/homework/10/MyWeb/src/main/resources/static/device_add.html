@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>添加界面</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h2>添加设备记录</h2>
+    <form id="addDeviceForm">
+        <div class="form-group">
+            <label for="deviceId">设备ID:</label>
+            <input type="text" class="form-control" id="deviceId" required>
+        </div>
+        <div class="form-group">
+            <label for="deviceName">设备名称:</label>
+            <input type="text" class="form-control" id="deviceName" required>
+        </div>
+        <div class="form-group">
+            <label for="deviceType">设备类型:</label>
+            <input type="text" class="form-control" id="deviceType" required>
+        </div>
+        <div class="form-group">
+            <label for="createTime">创建时间:</label>
+            <input type="text" class="form-control" id="createTime" required>
+        </div>
+        <button type="button" class="btn btn-primary" onclick="submitForm()">提交</button>
+        <button type="button" class="btn btn-secondary" onclick="goBack()">返回</button>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    function submitForm() {
+        // 获取表单数据
+        var device = {
+            deviceid: document.getElementById('deviceId').value,
+            devicename: document.getElementById('deviceName').value,
+            devicetype: document.getElementById('deviceType').value,
+            createtime: document.getElementById('createTime').value
+        };
+
+        // 发送axios POST请求
+        axios.post('/device/add_record', device)
+            .then(function(response) {
+                console.log(response.data);
+                alert('设备记录添加成功');
+                // 可以在这里添加逻辑，跳转到其他页面或者清空表单
+            })
+            .catch(function(error) {
+                console.error(error);
+                alert('添加设备记录失败');
+            });
+    }
+
+    function goBack() {
+        window.location.href = 'device_list.html';
+    }
+</script>
+</body>
+</html>

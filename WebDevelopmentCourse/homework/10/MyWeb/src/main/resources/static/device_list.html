@@ -1,0 +1,566 @@
+<!--&lt;!&ndash;&lt;!&ndash;<meta charset="UTF-8">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<link rel="stylesheet" type="text/css" href="dataTables.bootstrap.css" />&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<button type="button" id="get_data_button" name="get_data_button" onclick="javascript:getData();">查询</button>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<button type="button" id="add_data_button" name="add_data_button" onclick="javascript:addData();">添加</button>&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;<div class="row" id="datatable_tab">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    <div class="col-md-6">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        <table class="table table-striped table-bordered table-hover datatable" id="record_list">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            <thead>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            <tr>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                <th class="table-checkbox"><input type="checkbox" class="group-checkable" data-set="#record_list .checkboxes" /></th>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                <th>事件id</th>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                <th>事件</th>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                <th>创建人</th>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                <th>创建时间</th>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                <th>操作</th>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            </tr>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            </thead>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        </table>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;<div id="message" name="message"></div>&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;<script src="https://unpkg.com/axios/dist/axios.min.js"></script>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<script type="text/javascript" src="jquery-1.8.3.min.js"></script>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<script type="text/javascript" src="jquery.uniform.min.js"></script>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<script type="text/javascript" src="jquery.dataTables.min.js"></script>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<script>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    function getData(){&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        getDeviceRecord();&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    }&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    function getDeviceRecord() {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        axios.post("/device/get_record", {})&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            .then(function(res) {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                console.log(res.data.aaData);&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                // 这里将数据传递给初始化 DataTable 的函数&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                getDeviceRecordDataTable(res.data.aaData);&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            })&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            .catch(function(err) {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                console.log(err);&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            });&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    }&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    var getDeviceRecordDataTable = function (data) {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        resultList = [];&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        $('.datatable').dataTable({&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            "paging": true,&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            "searching": false,&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            "oLanguage": {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                "aria": {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    "sortAscending": ": activate to sort column ascending",&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    "sortDescending": ": activate to sort column descending"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                },&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                "sProcessing": "处理中...",&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                "sLengthMenu": "_MENU_ 记录/页",&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                "sZeroRecords": "没有匹配的记录",&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                "sInfo": "显示第 _START_ 至 _END_ 项记录，共 _TOTAL_ 项",&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                "sInfoEmpty": "显示第 0 至 0 项记录，共 0 项",&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                "sInfoFiltered": "(由 _MAX_ 项记录过滤)",&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                "sInfoPostFix": "",&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                "sSearch": "过滤:",&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                "oPaginate": {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    "sFirst": "首页",&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    "sPrevious": "上页",&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    "sNext": "下页",&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    "sLast": "末页"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                }&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            },&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            "aoColumns": [{&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                "mRender": function (data, type, full) {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    return '<input type="checkbox" class="checkboxes" value="' + full.id + '"/>';&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                }, "orderable": false&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            }, {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                "mRender": function (data, type, full) {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    return '<div>' + full.device_id + '</div>';&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                }, "orderable": false&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            }, {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                "mRender": function (data, type, full) {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    return '<div>' + full.device_name + '</div>';&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                }, "orderable": false&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            }, {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                "mRender": function (data, type, full) {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    return '<div>' + full.device_sub_type + '</div>';&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                }, "orderable": false&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            }, {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                "mRender": function (data, type, full) {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    return '<div>' + full.device_create_time + '</div>';&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                }, "orderable": false&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            }, {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                "mRender": function (data, type, full) {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    resultList.push(full);&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    return '<div><a href="javascript:Page.onModifyRecord(' + full.id + ')">【修改记录】</a><a href="javascript:Page.onDeleteRecord(' + full.id + ')">【删除记录】</a> </a><a href="javascript:Page.onViewRecord(' + full.id + ')">【查看记录】</a></div>';&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                }, "orderable": false&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            }],&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            "aLengthMenu": [[5, 10, 15, 20, 25, 40, 50, -1], [5, 10, 15, 20, 25, 40, 50, "所有记录"]],&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            "fnDrawCallback": function () {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                $(".checkboxes").uniform();&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                $(".group-checkable").uniform();&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            },&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            "data": data, // 使用传递进来的数据&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        });&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;        $('.datatable').find('.group-checkable').change(function () {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            var set = jQuery(this).attr("data-set");&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            var checked = jQuery(this).is(":checked");&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            jQuery(set).each(function () {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                if (checked) {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    $(this).attr("checked", true);&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    $(this).parents('tr').addClass("active");&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                } else {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    $(this).attr("checked", false);&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    $(this).parents('tr').removeClass("active");&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                }&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            });&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            jQuery.uniform.update(set);&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        });&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;        $('.datatable').on('change', 'tbody tr .checkboxes', function () {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            $(this).parents('tr').toggleClass("active");&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        });&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    };&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;    function addData(){&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        window.location.href = "/device_add.html";&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    }&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;</script>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;<!DOCTYPE html>&ndash;&gt;-->
+<!--&lt;!&ndash;<html lang="en">&ndash;&gt;-->
+<!--&lt;!&ndash;<head>&ndash;&gt;-->
+<!--&lt;!&ndash;    <meta charset="UTF-8">&ndash;&gt;-->
+<!--&lt;!&ndash;    <meta name="viewport" content="width=device-width, initial-scale=1.0">&ndash;&gt;-->
+<!--&lt;!&ndash;    <title>设备记录管理</title>&ndash;&gt;-->
+<!--&lt;!&ndash;    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">&ndash;&gt;-->
+<!--&lt;!&ndash;</head>&ndash;&gt;-->
+<!--&lt;!&ndash;<body>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="container">&ndash;&gt;-->
+<!--&lt;!&ndash;    <h2>设备记录管理</h2>&ndash;&gt;-->
+<!--&lt;!&ndash;    <button type="button" id="get_data_button" name="get_data_button" onclick="getData();">查询</button>&ndash;&gt;-->
+<!--&lt;!&ndash;    <button type="button" id="add_data_button" name="add_data_button" onclick="goToAddPage();">添加</button>&ndash;&gt;-->
+<!--&lt;!&ndash;    <div class="row" id="datatable_tab">&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="col-md-12">&ndash;&gt;-->
+<!--&lt;!&ndash;            <table class="table table-striped table-bordered table-hover datatable" id="record_list">&ndash;&gt;-->
+<!--&lt;!&ndash;                <thead>&ndash;&gt;-->
+<!--&lt;!&ndash;                <tr>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <th class="table-checkbox"><input type="checkbox" class="group-checkable" data-set="#record_list .checkboxes" /></th>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <th>事件id</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <th>事件</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <th>创建人</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <th>创建时间</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <th>操作</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                </tr>&ndash;&gt;-->
+<!--&lt;!&ndash;                </thead>&ndash;&gt;-->
+<!--&lt;!&ndash;            </table>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;<div id="message" name="message"></div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;<script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap.min.js"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.uniform/2.1.2/jquery.uniform.min.js"></script>&ndash;&gt;-->
+
+<!--&lt;!&ndash;<script>&ndash;&gt;-->
+<!--&lt;!&ndash;    function getData(){&ndash;&gt;-->
+<!--&lt;!&ndash;        getDeviceRecord();&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    function getDeviceRecord() {&ndash;&gt;-->
+<!--&lt;!&ndash;        axios.post("/device/get_record", {})&ndash;&gt;-->
+<!--&lt;!&ndash;            .then(function(res) {&ndash;&gt;-->
+<!--&lt;!&ndash;                console.log(res.data.aaData);&ndash;&gt;-->
+<!--&lt;!&ndash;                getDeviceRecordDataTable(res.data.aaData);&ndash;&gt;-->
+<!--&lt;!&ndash;            })&ndash;&gt;-->
+<!--&lt;!&ndash;            .catch(function(err) {&ndash;&gt;-->
+<!--&lt;!&ndash;                console.log(err);&ndash;&gt;-->
+<!--&lt;!&ndash;            });&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    var getDeviceRecordDataTable = function (data) {&ndash;&gt;-->
+<!--&lt;!&ndash;        resultList = [];&ndash;&gt;-->
+<!--&lt;!&ndash;        if ($.fn.DataTable.isDataTable('.datatable')) {&ndash;&gt;-->
+<!--&lt;!&ndash;            $('.datatable').DataTable().destroy();&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+<!--&lt;!&ndash;        $('.datatable tbody').empty();&ndash;&gt;-->
+
+<!--&lt;!&ndash;        $('.datatable').dataTable({&ndash;&gt;-->
+<!--&lt;!&ndash;            "paging": true,&ndash;&gt;-->
+<!--&lt;!&ndash;            "searching": false,&ndash;&gt;-->
+<!--&lt;!&ndash;            "oLanguage": {&ndash;&gt;-->
+<!--&lt;!&ndash;                "aria": {&ndash;&gt;-->
+<!--&lt;!&ndash;                    "sortAscending": ": activate to sort column ascending",&ndash;&gt;-->
+<!--&lt;!&ndash;                    "sortDescending": ": activate to sort column descending"&ndash;&gt;-->
+<!--&lt;!&ndash;                },&ndash;&gt;-->
+<!--&lt;!&ndash;                "sProcessing": "处理中...",&ndash;&gt;-->
+<!--&lt;!&ndash;                "sLengthMenu": "_MENU_ 记录/页",&ndash;&gt;-->
+<!--&lt;!&ndash;                "sZeroRecords": "没有匹配的记录",&ndash;&gt;-->
+<!--&lt;!&ndash;                "sInfo": "显示第 _START_ 至 _END_ 项记录，共 _TOTAL_ 项",&ndash;&gt;-->
+<!--&lt;!&ndash;                "sInfoEmpty": "显示第 0 至 0 项记录，共 0 项",&ndash;&gt;-->
+<!--&lt;!&ndash;                "sInfoFiltered": "(由 _MAX_ 项记录过滤)",&ndash;&gt;-->
+<!--&lt;!&ndash;                "sInfoPostFix": "",&ndash;&gt;-->
+<!--&lt;!&ndash;                "sSearch": "过滤:",&ndash;&gt;-->
+<!--&lt;!&ndash;                "oPaginate": {&ndash;&gt;-->
+<!--&lt;!&ndash;                    "sFirst": "首页",&ndash;&gt;-->
+<!--&lt;!&ndash;                    "sPrevious": "上页",&ndash;&gt;-->
+<!--&lt;!&ndash;                    "sNext": "下页",&ndash;&gt;-->
+<!--&lt;!&ndash;                    "sLast": "末页"&ndash;&gt;-->
+<!--&lt;!&ndash;                }&ndash;&gt;-->
+<!--&lt;!&ndash;            },&ndash;&gt;-->
+<!--&lt;!&ndash;            "aoColumns": [{&ndash;&gt;-->
+<!--&lt;!&ndash;                "mRender": function (data, type, full) {&ndash;&gt;-->
+<!--&lt;!&ndash;                    return '<input type="checkbox" class="checkboxes" value="' + full.id + '"/>';&ndash;&gt;-->
+<!--&lt;!&ndash;                }, "orderable": false&ndash;&gt;-->
+<!--&lt;!&ndash;            }, {&ndash;&gt;-->
+<!--&lt;!&ndash;                "mRender": function (data, type, full) {&ndash;&gt;-->
+<!--&lt;!&ndash;                    return '<div>' + full.device_id + '</div>';&ndash;&gt;-->
+<!--&lt;!&ndash;                }, "orderable": false&ndash;&gt;-->
+<!--&lt;!&ndash;            }, {&ndash;&gt;-->
+<!--&lt;!&ndash;                "mRender": function (data, type, full) {&ndash;&gt;-->
+<!--&lt;!&ndash;                    return '<div>' + full.device_name + '</div>';&ndash;&gt;-->
+<!--&lt;!&ndash;                }, "orderable": false&ndash;&gt;-->
+<!--&lt;!&ndash;            }, {&ndash;&gt;-->
+<!--&lt;!&ndash;                "mRender": function (data, type, full) {&ndash;&gt;-->
+<!--&lt;!&ndash;                    return '<div>' + full.device_type + '</div>';&ndash;&gt;-->
+<!--&lt;!&ndash;                }, "orderable": false&ndash;&gt;-->
+<!--&lt;!&ndash;            }, {&ndash;&gt;-->
+<!--&lt;!&ndash;                "mRender": function (data, type, full) {&ndash;&gt;-->
+<!--&lt;!&ndash;                    return '<div>' + full.create_time + '</div>';&ndash;&gt;-->
+<!--&lt;!&ndash;                }, "orderable": false&ndash;&gt;-->
+<!--&lt;!&ndash;            }, {&ndash;&gt;-->
+<!--&lt;!&ndash;                "mRender": function (data, type, full) {&ndash;&gt;-->
+<!--&lt;!&ndash;                    resultList.push(full);&ndash;&gt;-->
+<!--&lt;!&ndash;                    return '<div><a href="javascript:modifyRecord(' + full.id + ')">【修改记录】</a></div>';&ndash;&gt;-->
+<!--&lt;!&ndash;                }, "orderable": false&ndash;&gt;-->
+<!--&lt;!&ndash;            }],&ndash;&gt;-->
+<!--&lt;!&ndash;            "aLengthMenu": [[5, 10, 15, 20, 25, 40, 50, -1], [5, 10, 15, 20, 25, 40, 50, "所有记录"]],&ndash;&gt;-->
+<!--&lt;!&ndash;            "fnDrawCallback": function () {&ndash;&gt;-->
+<!--&lt;!&ndash;                $(".checkboxes").uniform();&ndash;&gt;-->
+<!--&lt;!&ndash;                $(".group-checkable").uniform();&ndash;&gt;-->
+<!--&lt;!&ndash;            },&ndash;&gt;-->
+<!--&lt;!&ndash;            "data": data,&ndash;&gt;-->
+<!--&lt;!&ndash;        });&ndash;&gt;-->
+
+<!--&lt;!&ndash;        $('.datatable').find('.group-checkable').change(function () {&ndash;&gt;-->
+<!--&lt;!&ndash;            var set = jQuery(this).attr("data-set");&ndash;&gt;-->
+<!--&lt;!&ndash;            var checked = jQuery(this).is(":checked");&ndash;&gt;-->
+<!--&lt;!&ndash;            jQuery(set).each(function () {&ndash;&gt;-->
+<!--&lt;!&ndash;                if (checked) {&ndash;&gt;-->
+<!--&lt;!&ndash;                    $(this).attr("checked", true);&ndash;&gt;-->
+<!--&lt;!&ndash;                    $(this).parents('tr').addClass("active");&ndash;&gt;-->
+<!--&lt;!&ndash;                } else {&ndash;&gt;-->
+<!--&lt;!&ndash;                    $(this).attr("checked", false);&ndash;&gt;-->
+<!--&lt;!&ndash;                    $(this).parents('tr').removeClass("active");&ndash;&gt;-->
+<!--&lt;!&ndash;                }&ndash;&gt;-->
+<!--&lt;!&ndash;            });&ndash;&gt;-->
+<!--&lt;!&ndash;            jQuery.uniform.update(set);&ndash;&gt;-->
+<!--&lt;!&ndash;        });&ndash;&gt;-->
+
+<!--&lt;!&ndash;        $('.datatable').on('change', 'tbody tr .checkboxes', function () {&ndash;&gt;-->
+<!--&lt;!&ndash;            $(this).parents('tr').toggleClass("active");&ndash;&gt;-->
+<!--&lt;!&ndash;        });&ndash;&gt;-->
+<!--&lt;!&ndash;    };&ndash;&gt;-->
+
+<!--&lt;!&ndash;    function modifyRecord(id) {&ndash;&gt;-->
+<!--&lt;!&ndash;        // 在这里可以跳转到修改页面或者打开一个模态框进行修改&ndash;&gt;-->
+<!--&lt;!&ndash;        window.location.href = 'modify_device.html?id=' + id;&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    function goToAddPage() {&ndash;&gt;-->
+<!--&lt;!&ndash;        window.location.href = 'device_add.html';&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+<!--&lt;!&ndash;</script>&ndash;&gt;-->
+<!--&lt;!&ndash;</body>&ndash;&gt;-->
+<!--&lt;!&ndash;</html>&ndash;&gt;-->
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>设备记录管理</title>-->
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="container">-->
+<!--    <h2>设备记录管理</h2>-->
+<!--    <button type="button" id="get_data_button" name="get_data_button" onclick="javascript:getData();">查询</button>-->
+<!--    <button type="button" id="add_data_button" name="add_data_button" onclick="javascript:goToAddPage();">添加</button>-->
+
+<!--    <div class="row" id="datatable_tab">-->
+<!--        <div class="col-md-12">-->
+<!--            <table class="table table-striped table-bordered table-hover datatable" id="record_list">-->
+<!--                <thead>-->
+<!--                <tr>-->
+<!--                    <th class="table-checkbox"><input type="checkbox" class="group-checkable" data-set="#record_list .checkboxes" /></th>-->
+<!--                    <th>事件id</th>-->
+<!--                    <th>事件</th>-->
+<!--                    <th>创建人</th>-->
+<!--                    <th>创建时间</th>-->
+<!--                    <th>操作</th>-->
+<!--                </tr>-->
+<!--                </thead>-->
+<!--            </table>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--<div id="message" name="message"></div>-->
+
+<!--<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>-->
+<!--<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>-->
+<!--<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>-->
+<!--<script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.uniform/2.1.2/jquery.uniform.min.js"></script>-->
+
+<!--<script>-->
+<!--    function getData(){-->
+<!--        getDeviceRecord();-->
+<!--    }-->
+
+<!--    function getDeviceRecord() {-->
+<!--        axios.post("/device/get_record", {})-->
+<!--            .then(function(res) {-->
+<!--                console.log(res.data.aaData);-->
+<!--                getDeviceRecordDataTable(res.data.aaData);-->
+<!--            })-->
+<!--            .catch(function(err) {-->
+<!--                console.log(err);-->
+<!--            });-->
+<!--    }-->
+
+<!--    var getDeviceRecordDataTable = function (data) {-->
+<!--        resultList = [];-->
+<!--        if ($.fn.DataTable.isDataTable('.datatable')) {-->
+<!--            $('.datatable').DataTable().destroy();-->
+<!--        }-->
+<!--        $('.datatable tbody').empty();-->
+
+<!--        $('.datatable').dataTable({-->
+<!--            "paging": true,-->
+<!--            "searching": false,-->
+<!--            "oLanguage": {-->
+<!--                "aria": {-->
+<!--                    "sortAscending": ": activate to sort column ascending",-->
+<!--                    "sortDescending": ": activate to sort column descending"-->
+<!--                },-->
+<!--                "sProcessing": "处理中...",-->
+<!--                "sLengthMenu": "_MENU_ 记录/页",-->
+<!--                "sZeroRecords": "没有匹配的记录",-->
+<!--                "sInfo": "显示第 _START_ 至 _END_ 项记录，共 _TOTAL_ 项",-->
+<!--                "sInfoEmpty": "显示第 0 至 0 项记录，共 0 项",-->
+<!--                "sInfoFiltered": "(由 _MAX_ 项记录过滤)",-->
+<!--                "sInfoPostFix": "",-->
+<!--                "sSearch": "过滤:",-->
+<!--                "oPaginate": {-->
+<!--                    "sFirst": "首页",-->
+<!--                    "sPrevious": "上页",-->
+<!--                    "sNext": "下页",-->
+<!--                    "sLast": "末页"-->
+<!--                }-->
+<!--            },-->
+<!--            "aoColumns": [{-->
+<!--                "mRender": function (data, type, full) {-->
+<!--                    return '<input type="checkbox" class="checkboxes" value="' + full.id + '"/>';-->
+<!--                }, "orderable": false-->
+<!--            }, {-->
+<!--                "mRender": function (data, type, full) {-->
+<!--                    return '<div>' + full.device_id + '</div>';-->
+<!--                }, "orderable": false-->
+<!--            }, {-->
+<!--                "mRender": function (data, type, full) {-->
+<!--                    return '<div>' + full.device_name + '</div>';-->
+<!--                }, "orderable": false-->
+<!--            }, {-->
+<!--                "mRender": function (data, type, full) {-->
+<!--                    return '<div>' + full.device_type + '</div>';-->
+<!--                }, "orderable": false-->
+<!--            }, {-->
+<!--                "mRender": function (data, type, full) {-->
+<!--                    return '<div>' + full.create_time + '</div>';-->
+<!--                }, "orderable": false-->
+<!--            }, {-->
+<!--                "mRender": function (data, type, full) {-->
+<!--                    resultList.push(full);-->
+<!--                    return '<div><a href="javascript:modifyRecord(' + full.id + ')">【修改记录】</a></div>';-->
+<!--                }, "orderable": false-->
+<!--            }],-->
+<!--            "aLengthMenu": [[5, 10, 15, 20, 25, 40, 50, -1], [5, 10, 15, 20, 25, 40, 50, "所有记录"]],-->
+<!--            "fnDrawCallback": function () {-->
+<!--                $(".checkboxes").uniform();-->
+<!--                $(".group-checkable").uniform();-->
+<!--            },-->
+<!--            "data": data,-->
+<!--        });-->
+
+<!--        $('.datatable').find('.group-checkable').change(function () {-->
+<!--            var set = jQuery(this).attr("data-set");-->
+<!--            var checked = jQuery(this).is(":checked");-->
+<!--            jQuery(set).each(function () {-->
+<!--                if (checked) {-->
+<!--                    $(this).attr("checked", true);-->
+<!--                    $(this).parents('tr').addClass("active");-->
+<!--                } else {-->
+<!--                    $(this).attr("checked", false);-->
+<!--                    $(this).parents('tr').removeClass("active");-->
+<!--                }-->
+<!--            });-->
+<!--            jQuery.uniform.update(set);-->
+<!--        });-->
+
+<!--        $('.datatable').on('change', 'tbody tr .checkboxes', function () {-->
+<!--            $(this).parents('tr').toggleClass("active");-->
+<!--        });-->
+<!--    };-->
+
+<!--    function modifyRecord(id) {-->
+<!--        window.location.href = 'modify_device.html?id=' + id;-->
+<!--    }-->
+
+<!--    function goToAddPage() {-->
+<!--        window.location.href = 'device_add.html';-->
+<!--    }-->
+
+<!--    window.onload = function() {-->
+<!--        getData();-->
+<!--    }-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设备记录管理</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h2>设备记录管理</h2>
+    <button type="button" id="get_data_button" name="get_data_button" onclick="javascript:getData();">查询</button>
+    <button type="button" id="add_data_button" name="add_data_button" onclick="javascript:goToAddPage();">添加</button>
+
+    <!-- 添加复选框 -->
+    <div id="checkboxes">
+        <label><input type="checkbox" class="column-toggle" data-column="0" checked> 事件id</label>
+        <label><input type="checkbox" class="column-toggle" data-column="1" checked> 事件</label>
+        <label><input type="checkbox" class="column-toggle" data-column="2" checked> 创建人</label>
+        <label><input type="checkbox" class="column-toggle" data-column="3" checked> 创建时间</label>
+        <label><input type="checkbox" class="column-toggle" data-column="4" checked> 操作</label>
+    </div>
+
+    <div class="row" id="datatable_tab">
+        <div class="col-md-12">
+            <table class="table table-striped table-bordered table-hover datatable" id="record_list">
+                <thead>
+                <tr>
+                    <th>事件id</th>
+                    <th>事件</th>
+                    <th>创建人</th>
+                    <th>创建时间</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="message" name="message"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap.min.js"></script>
+
+<script>
+    function getData(){
+        getDeviceRecord();
+    }
+
+    function getDeviceRecord() {
+        axios.post("/device/get_record", {})
+            .then(function(res) {
+                console.log(res.data.aaData);
+                getDeviceRecordDataTable(res.data.aaData);
+            })
+            .catch(function(err) {
+                console.log(err);
+            });
+    }
+
+    var getDeviceRecordDataTable = function (data) {
+        resultList = [];
+        if ($.fn.DataTable.isDataTable('.datatable')) {
+            $('.datatable').DataTable().destroy();
+        }
+        $('.datatable tbody').empty();
+
+        var table = $('.datatable').DataTable({
+            "paging": true,
+            "searching": false,
+            "oLanguage": {
+                "aria": {
+                    "sortAscending": ": activate to sort column ascending",
+                    "sortDescending": ": activate to sort column descending"
+                },
+                "sProcessing": "处理中...",
+                "sLengthMenu": "_MENU_ 记录/页",
+                "sZeroRecords": "没有匹配的记录",
+                "sInfo": "显示第 _START_ 至 _END_ 项记录，共 _TOTAL_ 项",
+                "sInfoEmpty": "显示第 0 至 0 项记录，共 0 项",
+                "sInfoFiltered": "(由 _MAX_ 项记录过滤)",
+                "sInfoPostFix": "",
+                "sSearch": "过滤:",
+                "oPaginate": {
+                    "sFirst": "首页",
+                    "sPrevious": "上页",
+                    "sNext": "下页",
+                    "sLast": "末页"
+                }
+            },
+            "columns": [
+                { "data": "device_id", "orderable": false },
+                { "data": "device_name", "orderable": false },
+                { "data": "device_type", "orderable": false },
+                { "data": "create_time", "orderable": false },
+                {
+                    "orderable": false,
+                    "render": function (data, type, full) {
+                        resultList.push(full);
+                        return '<div><a href="javascript:modifyRecord(' + full.id + ')">【修改记录】</a></div>';
+                    }
+                }
+            ],
+            "aLengthMenu": [[5, 10, 15, 20, 25, 40, 50, -1], [5, 10, 15, 20, 25, 40, 50, "所有记录"]],
+            "data": data // Ensure data is passed to DataTable
+        });
+
+        // 添加复选框事件监听器
+        $('.column-toggle').change(function() {
+            var column = table.column($(this).attr('data-column'));
+            column.visible(!column.visible());
+        });
+    };
+
+    function modifyRecord(id) {
+        window.location.href = 'modify_device.html?id=' + id;
+    }
+
+    function goToAddPage() {
+        window.location.href = 'device_add.html';
+    }
+
+    window.onload = function() {
+        getData();
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+    "C_Cpp.default.compilerPath": "c:\\mingw64\\bin\\gcc.exe",
+    "files.associations": {
+        "unistd.h": "c",
+        "string.h": "c",
+        "stdlib.h": "c",
+        "pthread.h": "c"
+    }
+}
