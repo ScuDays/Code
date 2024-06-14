@@ -1,0 +1,19 @@
+{
+  "pages": [
+    "pages/todo/todo_list",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/todo/todo_add",
+
+    "pages/todo/todo_modify"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarBackgroundColor": "#ffffff"
+  },
+
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

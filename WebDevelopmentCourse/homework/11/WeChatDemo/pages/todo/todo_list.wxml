@@ -1,0 +1,85 @@
+<view class="container">
+	<view class="search-flex {{scrolltop>200?'tophide':''}}">
+		<view class="search-bar">
+			<input type="text" maxlength="12" placeholder="请输入关键字查询" bindinput="inputSearch"></input>
+			<button class="search-btn" bindtap="submitSearch" wx:if="{{showsearch}}">搜索</button>
+		</view>
+		<button class="search-extra-btn">服务商入驻</button>
+	</view>
+	<view class="filter-flex">
+		<view class="filter-tab">
+			<text bindtap="setFilterPanel" data-findex="1" class="{{showfilterindex==1?'active':''}}">服务类别</text>
+			<text bindtap="setFilterPanel" data-findex="2" class="{{showfilterindex==2?'active':''}}">服务城市</text>
+		</view>
+		<view class="filter-content" wx:if="{{showfilter}}">
+			<view class="filter-panel" wx:if="{{showfilterindex==1}}">
+				<view class="filter-panel-left">
+					<view wx:for="{{filterdata.sort}}" wx:key="{{item.id}}" bindtap="setSortIndex" data-sortindex="{{index}}" data-sortid="{{item.id}}" class="{{sortindex==index?'active':''}}">{{item.title}}</view>
+				</view>
+				<view class="filter-panel-right">
+					<view wx:for="{{filterdata.sort[sortindex].subsort}}" wx:key="{{item.id}}" bindtap="setSubsortIndex" data-subsortindex="{{index}}" data-subsortid="{{item.id}}" class="{{subsortindex==index?'active':''}}">{{item.title}}</view>
+				</view>
+			</view>
+			<view class="filter-panel" wx:if="{{showfilterindex==2}}">
+				<view class="filter-panel-left">
+					<view wx:for="{{filterdata.city}}" wx:key="{{item.id}}" bindtap="setCityIndex" data-cityindex="{{index}}" data-cityid="{{item.id}}" class="{{cityindex==index?'active':''}}">{{item.title}}</view>
+				</view>
+				<view class="filter-panel-right">
+					<view wx:for="{{filterdata.city[cityindex].subcity}}" wx:key="{{item.id}}" bindtap="setSubcityIndex" data-subcityindex="{{index}}" data-subcityid="{{item.id}}" class="{{subcityindex==index?'active':''}}">{{item.title}}</view>
+				</view>
+			</view>
+		</view>
+		<view class="filter-shadow" wx:if="{{showfilter}}" bindtap="hideFilter"></view>
+	</view>
+	<scroll-view class="container-body" scroll-y="true" scroll-top="{{scrolltop}}" bindscroll="scrollHandle" lower-threshold="50" bindscrolltolower="scrollLoading">
+		<view class="service-list">
+			<navigator class="service-item" wx:for="{{todoList}}" wx:key="{{item.id}}" url="../servicedetail/servicedetail?id={{item.id}}">
+				<view class="service-img">
+					<image src="http://img.mukewang.com/57fdecf80001fb0406000338-240-135.jsp" mode="aspectFill"></image>
+				</view>
+				<view class="service-text">
+					<view class="service-tite">{{item.title}}</view>
+					<view class="service-tags">
+						<text>{{item.limit_time}}</text>
+					</view>
+          <view >
+					<text class="service-city">device_id:{{item.device_id}}</text>
+        </view>
+        <view >
+          <text class="service-city">device_name:{{item.device_name}}</text>
+        </view>
+        <view >
+          <text class="service-city">device_type:{{item.device_type}}</text>
+        </view>
+        <view >
+          <text class="service-city">longitude:{{item.longitude}}</text>
+        </view>
+        <view >
+          <text class="service-city">latitude:{{item.latitude}}</text>
+        </view>
+        <view >
+          <text class="service-city">address:{{item.address}}</text>
+        </view>
+        <view >
+          <text class="service-city">creator_id:{{item.creator_id}}</text>
+        </view>
+        <view >
+          <text class="service-city">creator:{{item.creator}}</text>
+        </view>
+        <view >
+          <text class="service-city">creator_time:{{item.create_time}}</text>
+        </view>
+          <view class = "service-tags">
+            <text bindtap="onDeleteRecord" data-itemId="{{item.id}}">删除</text><text bindtap="onModifyRecord" data-itemId="{{item.id}}" data-itemdevice_id="{{item.device_id}}" data-itemdevice_name="{{item.device_name}}" data-itemcreate_time="{{item.create_time}}">修改</text>
+          </view>
+				</view>
+     
+   
+			</navigator>
+		</view>
+		<view class="gototop {{scrolltop>200?'active':''}}" bindtap="goToTop"></view>
+	</scroll-view>
+  <view class="btn-submit">
+		<button class="btn-block btn-orange" bindtap="onAddRecord">添加</button>
+	</view>
+</view>

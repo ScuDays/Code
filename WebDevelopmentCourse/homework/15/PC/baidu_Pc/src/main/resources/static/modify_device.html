@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改设备记录</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h2>修改设备记录</h2>
+    <form id="modifyDeviceForm">
+        <div class="form-group">
+            <label for="deviceId">设备ID:</label>
+            <input type="text" class="form-control" id="deviceId" required>
+        </div>
+        <div class="form-group">
+            <label for="deviceName">设备名称:</label>
+            <input type="text" class="form-control" id="deviceName" required>
+        </div>
+        <div class="form-group">
+            <label for="deviceType">设备类型:</label>
+            <input type="text" class="form-control" id="deviceType" required>
+        </div>
+        <div class="form-group">
+            <label for="createTime">创建时间:</label>
+            <input type="text" class="form-control" id="createTime" required>
+        </div>
+        <button type="button" class="btn btn-primary" onclick="submitForm()">提交</button>
+        <button type="button" class="btn btn-secondary" onclick="goBack()">返回</button>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    // 全局变量来保存 URL 参数中的 id
+    let deviceId;
+
+    // 获取 URL 参数中的 id 并保存到全局变量
+    function getUrlParameter(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+    }
+
+    // 从服务器获取设备数据并填充表单
+    function getDeviceData(id) {
+        axios.post('/device/get_id_record', { id: id })
+            .then(function(response) {
+                const device = response.data;
+                document.getElementById('deviceId').value = device.deviceid;
+                document.getElementById('deviceName').value = device.devicename;
+                document.getElementById('deviceType').value = device.devicetype;
+                document.getElementById('createTime').value = device.createtime;
+            })
+            .catch(function(error) {
+                console.error(error);
+                alert('获取设备记录失败');
+            });
+    }
+
+    function submitForm() {
+        // 获取表单数据
+        const device = {
+            id: deviceId, // 使用全局变量中的 ID
+            deviceid: document.getElementById('deviceId').value,
+            devicename: document.getElementById('deviceName').value,
+            devicetype: document.getElementById('deviceType').value,
+            createtime: document.getElementById('createTime').value
+        };
+
+        // 发送axios POST请求
+        axios.post('/device/modify_record', device)
+            .then(function(response) {
+                console.log(response.data);
+                alert('设备记录修改成功');
+                window.location.href = 'device_list.html';
+
+            })
+            .catch(function(error) {
+                console.error(error);
+                alert('修改设备记录失败');
+            });
+    }
+
+    function goBack() {
+        window.location.href = 'device_list.html';
+    }
+
+    // 页面加载完成后获取 URL 参数中的 id 并获取设备数据
+    window.onload = function() {
+        deviceId = getUrlParameter('id');
+        if (!deviceId) {
+            alert('未能获取设备 ID');
+        } else {
+            getDeviceData(deviceId);
+        }
+    }
+</script>
+</body>
+</html>

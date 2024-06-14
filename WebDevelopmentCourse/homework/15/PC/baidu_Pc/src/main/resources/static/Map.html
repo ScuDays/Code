@@ -1,0 +1,296 @@
+  <!DOCTYPE html>
+  <html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="百度地图,百度地图API，百度地图自定义工具，百度地图所见即所得工具" />
+    <meta name="description" content="百度地图API自定义地图，帮助用户在可视化操作下生成百度地图" />
+    <title>百度地图API自定义地图</title>
+    <!-- 引用百度地图API -->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=40AYLNt8StvICMUhgpgntDnJEkebcaiV"></script>
+    <style>
+      html, body, #map {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+  <!-- 百度地图容器 -->
+  <div id="map"></www.idg.net="idg"></div>
+  <div id="modal" style="display:none; position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border: 1px solid black; z-index: 1000;">
+    <form id="editForm">
+      设备ID：<input type="text" id="deviceId" name="deviceId"><br>
+      设备名称：<input type="text" id="deviceName" name="deviceName"><br>
+      联系人（主要）：<input type="text" id="contactMain" name="contactMain"><br>
+      联系人ID：<input type="text" id="contactId" name="contactId"><br>
+      联系电话：<input type="text" id="contactPhone" name="contactPhone"><br>
+      <button type="button" onclick="submitForm()">提交修改</button>
+      <button type="button" onclick="closeModal()">关闭窗口</button>
+    </form>
+  </div>
+  <!--设置增加和修改框-->
+  <!--<div id="editDialog" style="display:none; position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border: 1px solid black; z-index: 1000;">-->
+  <!--  <label>设备ID: <input type="text" id="editDeviceId"></label>-->
+  <!--  <label>负责人: <input type="text" id="editCreator"></label>-->
+  <!--  <label>负责人ID: <input type="text" id="editCreatorId"></label>-->
+  <!--  <label>设备类型: <input type="text" id="editDeviceType"></label>-->
+  <!--  <button onclick="submitEdit()">提交</button>-->
+  <!--  <button onclick="closeDialog()">取消</button>-->
+  <!--</div>-->
+
+  <div id="editDialog" style="display:none; position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border: 1px solid black; z-index: 1000;">
+    <div style="margin-bottom: 10px;">
+      <label for="editDeviceId">设备ID:</label>
+      <input type="text" id="editDeviceId" style="width: 100%;">
+    </div>
+    <div style="margin-bottom: 10px;">
+      <label for="editCreator">负责人:</label>
+      <input type="text" id="editCreator" style="width: 100%;">
+    </div>
+    <div style="margin-bottom: 10px;">
+      <label for="editCreatorId">负责人ID:</label>
+      <input type="text" id="editCreatorId" style="width: 100%;">
+    </div>
+    <div style="margin-bottom: 10px;">
+      <label for="editDeviceType">设备类型:</label>
+      <input type="text" id="editDeviceType" style="width: 100%;">
+    </div>
+    <button onclick="submitEdit()" style="width: 100%; padding: 8px; margin-top: 10px;">提交</button>
+    <button onclick="closeDialog()" style="width: 100%; padding: 8px; margin-top: 10px;">取消</button>
+  </div>
+
+  <!-- 自定义对话框 -->
+
+    <div id="addDialog" style="display:none; position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border: 1px solid black; z-index: 1000;">
+
+    <label>设备ID: <input type="text" id="addDeviceId"></label>
+    <label>负责人: <input type="text" id="addCreator"></label>
+    <label>负责人ID: <input type="text" id="addCreatorId"></label>
+    <button onclick="submitAdd()">提交</button>
+    <button onclick="closeAddDialog()">取消</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script type="text/javascript">
+    // 创建和初始化地图函数：
+    function initMap(){
+      createMap();// 创建地图
+      setMapEvent();// 设置地图事件
+      addMapControl();// 向地图添加控件
+      //addMapOverlay();// 向地map元素添加地理标记
+      loadMarkers();
+    }
+    function createMap(){
+      map = new BMap.Map("map");
+      map.centerAndZoom(new BMap.Point(104.020394,30.567121),14);
+
+    }
+    function setMapEvent(){
+      map.enableScrollWheelZoom();
+      map.enableKeyboard();
+      map.enableDragging();
+      map.enableDoubleClickZoom();
+    }
+    function addClickHandler(target,window){
+      target.addEventListener("click",function(){
+        target.openInfoWindow(window);
+      });
+    }
+
+    function addMapOverlay(markers){
+
+      console.log("这里是addMapOverlay");
+      console.log(markers.length);
+      for(var index = 0; index < markers.length; index++ ){
+        var point = new BMap.Point(markers[index].longitude, markers[index].latitude);
+        var marker = new BMap.Marker(point, {icon: new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png", new BMap.Size(20,25), {
+            imageOffset: new BMap.Size(0, 0)
+          })});
+        var label = new BMap.Label(markers[index].device_id, {offset: new BMap.Size(25, 5)});
+        var opts = {
+          width: 250,
+          title: markers[index].device_id,
+          enableMessage: false
+        };
+        var content =
+                "设备ID: " + markers[index].device_id + "<br>" +
+                "时间: " + markers[index].gps_time + "<br>" +
+                "海拔: " + markers[index].altitude + " m<br>" +
+                "速度: " + markers[index].speed + " km/h<br>" +
+                "地点: " + markers[index].direction + "°<br>" +
+                "经度: " + markers[index].longitude + "<br>" +
+                "纬度: " + markers[index].latitude + "<br>" +
+                "负责人: " + markers[index].creator + "<br>" +
+                "负责人ID: " + markers[index].creator_id + "<br>" +
+                "设备类型: " + markers[index].device_type + "<br><br>" +
+                "<button onclick=\"editMarker('" + markers[index].device_id + "', '" + markers[index].creator + "', '" + markers[index].creator_id + "', '" + markers[index].device_type + "')\">修改</button>" +
+                "<button onclick=\"deleteMarker('" + markers[index].device_id + "')\">删除</button>";
+        var infoWindow = new BMap.InfoWindow(content, opts);
+        marker.setLabel(label);
+        addClickHandler(marker, infoWindow);
+        map.addOverlay(marker);
+      }
+    }
+
+    // function editMarker(device_id, creator, creator_id, device_type) {
+    //   if ((!creator || creator.trim() === '') && (!creator_id || creator_id.trim() === '')) {
+    //     alert("无法修改，因为要先添加负责人信息")
+    //     addMarker(device_id,creator,creator_id);
+    //   }
+    //   else{
+    //     currentDeviceId = device_id;
+    //     document.getElementById('editDeviceId').value = device_id;
+    //     document.getElementById('editCreator').value = creator;
+    //     document.getElementById('editCreatorId').value = creator_id;
+    //     document.getElementById('editDeviceType').value = device_type;
+    //     document.getElementById('editDialog').style.display = 'block';
+    //   }
+    //
+    // }
+    function editMarker(device_id, creator, creator_id, device_type) {
+      if ((!creator || creator.trim() === '') && (!creator_id || creator_id.trim() === '')) {
+        alert("无法修改，因为要先添加负责人信息")
+        addMarker(device_id,creator,creator_id);
+      }
+      else {
+             currentDeviceId = device_id;
+            document.getElementById('editDeviceId').value = device_id;
+            document.getElementById('editCreator').value = creator;
+            document.getElementById('editCreatorId').value = creator_id;
+            document.getElementById('editDeviceType').value = device_type;
+            document.getElementById('editDialog').style.display = 'block';
+      }
+    }
+    function addMarker(device_id,creator,creator_id){
+      console.log("进入了addMarker")
+      currentDeviceId = device_id;
+      document.getElementById('addDeviceId').value = device_id;
+      document.getElementById('addCreator').value = creator;
+      document.getElementById('addCreatorId').value = creator_id;
+      document.getElementById('addDialog').style.display = 'block';
+    }
+
+    function  closeDialog() {
+      document.getElementById('editDialog').style.display = 'none';
+    }
+
+    function deleteMarker(device_id) {
+      var device_id = device_id
+
+      console.log("Device ID:", device_id);
+
+
+      var postData = {
+        device_id: device_id,
+      };
+      if (confirm("是否进行删除?")) {
+        axios.post('/device/delete_record',postData)
+                .then(function(response) {
+                  console.log('Success:', response.data);
+                  closeDialog();
+                })
+                .catch(function(error) {
+                  console.error('Error:', error);
+                });
+      }
+    }
+
+
+    // 向地图添加控件
+    function addMapControl(){
+      var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+      scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+      map.addControl(scaleControl);
+      var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+      map.addControl(navControl);
+      var overviewControl = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:true});
+      map.addControl(overviewControl);
+    }
+    var map;
+    initMap();
+
+    function showModal() {
+      document.getElementById('modal').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    function submitForm() {
+      var form = document.getElementById('editForm');
+      console.log('提交数据:', form.deviceId.value, form.deviceName.value, form.contactMain.value, form.contactId.value, form.contactPhone.value);
+      // 这里可以添加AJAX代码提交表单数据
+      closeModal(); // 提交后关闭模态窗口
+    }
+
+    function loadMarkers(){
+      axios.post("/device/get_record", {})
+              .then(function(res) {
+                console.log(res.data.aaData);
+                addMapOverlay(res.data.aaData);
+              })
+              .catch(function(err) {
+                console.log(err);
+              });
+
+    }
+    function submitEdit() {
+      // 获取每个输入框的值
+      var device_id = document.getElementById('editDeviceId').value;
+      var creator = document.getElementById('editCreator').value;
+      var creator_id = document.getElementById('editCreatorId').value;
+      var device_type = document.getElementById('editDeviceType').value;
+
+      // 打印值到控制台（可选，用于调试）
+      console.log("Device ID:", device_id);
+      console.log("Creator:", creator);
+      console.log("Creator ID:", creator_id);
+      console.log("Device Type:", device_type);
+      // 可以在这里添加代码以处理这些数据，例如发送一个 AJAX 请求到服务器
+      var postData = {
+        device_id: device_id,
+        creator: creator,
+        creator_id: creator_id,
+        device_type: device_type
+      };
+      onmouseout
+      axios.post('/device/modify_record', postData)
+              .then(function(response) {
+                console.log('Success:', response.data);
+                // 这里可以添加更多的代码来处理响应，如更新 UI 或关闭对话框
+                closeDialog();
+              })
+              .catch(function(error) {
+                console.error('Error:', error);
+              });
+    }
+
+    function closeAddDialog(){
+      document.getElementById('addDialog').style.display = 'none';
+    }
+    function submitAdd(){
+      var device_id = document.getElementById('addDeviceId').value;
+      var creator = document.getElementById('addCreator').value;
+      var creator_id = document.getElementById('addCreatorId').value;
+      var postData = {
+        device_id: device_id,
+        creator: creator,
+        creator_id: creator_id
+      };
+      axios.post('/device/modify_record', postData)
+              .then(function(response) {
+                console.log('Success:', response.data);
+                // 这里可以添加更多的代码来处理响应，如更新 UI 或关闭对话框
+                closeDialog();
+              })
+              .catch(function(error) {
+                console.error('Error:', error);
+              });
+    }
+  </script>
+  </body>
+  </html>

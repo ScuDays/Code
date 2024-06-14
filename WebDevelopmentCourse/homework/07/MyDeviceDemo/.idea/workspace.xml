@@ -40,6 +40,35 @@
       <change beforePath="$PROJECT_DIR$/../../../../OneTwo/x64/Debug/OneTwo.vcxproj.FileListAbsolute.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../OneTwo/x64/Debug/vc143.idb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../OneTwo/x64/Debug/vc143.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Project1/.vs/Project1/FileContentIndex/338d546e-b6ad-4785-a72d-c62cf523c0ad.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Project1/.vs/Project1/FileContentIndex/87153eca-defe-4664-9bba-3ca4daf61649.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Project1/.vs/Project1/FileContentIndex/9c81b0d4-2db3-4592-9a6b-52352afe1640.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Project1/.vs/Project1/v17/.suo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Project1/.vs/Project1/v17/Browse.VC.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Project1/.vs/Project1/v17/ipch/AutoPCH/250f2cb486dcef76/FILENAME.ipch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Project1/.vs/Project1/v17/ipch/AutoPCH/a9fad589514ecfc6/FILENAME.ipch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Project1/FileName.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Project1/Project1.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Project1/Project1.vcxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Project1/Project1.vcxproj.filters" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Project1/Project1.vcxproj.user" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Project1/x64/Debug/FileName.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Project1/x64/Debug/Project1.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Project1/x64/Debug/Project1.exe.recipe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Project1/x64/Debug/Project1.ilk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Project1/x64/Debug/Project1.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Project1/x64/Debug/Project1.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Project1/x64/Debug/Project1.tlog/CL.command.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Project1/x64/Debug/Project1.tlog/CL.read.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Project1/x64/Debug/Project1.tlog/CL.write.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Project1/x64/Debug/Project1.tlog/Cl.items.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Project1/x64/Debug/Project1.tlog/Project1.lastbuildstate" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Project1/x64/Debug/Project1.tlog/link.command.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Project1/x64/Debug/Project1.tlog/link.read.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Project1/x64/Debug/Project1.tlog/link.write.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Project1/x64/Debug/Project1.vcxproj.FileListAbsolute.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Project1/x64/Debug/vc143.idb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Project1/x64/Debug/vc143.pdb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../TwoBits/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../TwoBits/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../TwoBits/.idea/misc.xml" beforeDir="false" />
@@ -47,178 +76,6 @@
       <change beforePath="$PROJECT_DIR$/../../../../TwoBits/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../TwoBits/TwoBits.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../TwoBits/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/artifacts/Myweb_war_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/.idea/artifacts/FileUpload_war_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/.idea/libraries/lib.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/FileUpload.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/src/teacher/FileUpLoad.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/lib/annotations-api.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/lib/catalina-ant.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/lib/catalina-ha.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/lib/catalina-storeconfig.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/lib/catalina-tribes.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/lib/catalina.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/lib/commons-fileupload-1.2.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/lib/commons-io-2.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/lib/ecj-4.6.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/lib/el-api.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/lib/jasper-el.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/lib/jasper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/lib/jaspic-api.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/lib/json (1).jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/lib/json.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/lib/jsp-api.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/lib/mysql-connector-java-5.0.4-bin (1).jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/lib/mysql-connector-java-5.0.4-bin.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/lib/servlet-api.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/lib/tomcat-api.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/lib/tomcat-coyote.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/lib/tomcat-dbcp.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/lib/tomcat-i18n-de.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/lib/tomcat-i18n-es.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/lib/tomcat-i18n-fr.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/lib/tomcat-i18n-ja.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/lib/tomcat-i18n-ko.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/lib/tomcat-i18n-ru.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/lib/tomcat-i18n-zh-CN.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/lib/tomcat-jdbc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/lib/tomcat-jni.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/lib/tomcat-util-scan.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/lib/tomcat-util.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/lib/tomcat-websocket.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/lib/websocket-api.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/front.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileUpload/web/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Myweb.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/.idea/artifacts/crud_war_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/.idea/libraries/lib.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/.idea/libraries/mysql_connector_java_5_0_4_bin.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/crud.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/WEB-INF/lib/annotations-api.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/WEB-INF/lib/catalina-ant.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/WEB-INF/lib/catalina-ha.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/WEB-INF/lib/catalina-storeconfig.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/WEB-INF/lib/catalina-tribes.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/WEB-INF/lib/catalina.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/WEB-INF/lib/ecj-4.6.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/WEB-INF/lib/el-api.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/WEB-INF/lib/jasper-el.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/WEB-INF/lib/jasper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/WEB-INF/lib/jaspic-api.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/WEB-INF/lib/json (1).jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/WEB-INF/lib/json.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/WEB-INF/lib/jsp-api.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/WEB-INF/lib/mysql-connector-java-5.0.4-bin.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/WEB-INF/lib/servlet-api.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/WEB-INF/lib/tomcat-api.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/WEB-INF/lib/tomcat-coyote.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/WEB-INF/lib/tomcat-dbcp.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/WEB-INF/lib/tomcat-i18n-de.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/WEB-INF/lib/tomcat-i18n-es.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/WEB-INF/lib/tomcat-i18n-fr.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/WEB-INF/lib/tomcat-i18n-ja.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/WEB-INF/lib/tomcat-i18n-ko.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/WEB-INF/lib/tomcat-i18n-ru.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/WEB-INF/lib/tomcat-i18n-zh-CN.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/WEB-INF/lib/tomcat-jdbc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/WEB-INF/lib/tomcat-jni.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/WEB-INF/lib/tomcat-util-scan.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/WEB-INF/lib/tomcat-util.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/WEB-INF/lib/tomcat-websocket.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/WEB-INF/lib/websocket-api.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/device_add.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/device_add_ok.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/device_delete_ok.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/device_list.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/device_modify.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/device_modify_ok.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/out/artifacts/crud_war_exploded/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/WEB-INF/lib/annotations-api.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/WEB-INF/lib/catalina-ant.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/WEB-INF/lib/catalina-ha.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/WEB-INF/lib/catalina-storeconfig.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/WEB-INF/lib/catalina-tribes.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/WEB-INF/lib/catalina.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/WEB-INF/lib/ecj-4.6.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/WEB-INF/lib/el-api.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/WEB-INF/lib/jasper-el.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/WEB-INF/lib/jasper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/WEB-INF/lib/jaspic-api.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/WEB-INF/lib/json (1).jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/WEB-INF/lib/json.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/WEB-INF/lib/jsp-api.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/WEB-INF/lib/mysql-connector-java-5.0.4-bin.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/WEB-INF/lib/servlet-api.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/WEB-INF/lib/tomcat-api.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/WEB-INF/lib/tomcat-coyote.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/WEB-INF/lib/tomcat-dbcp.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/WEB-INF/lib/tomcat-i18n-de.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/WEB-INF/lib/tomcat-i18n-es.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/WEB-INF/lib/tomcat-i18n-fr.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/WEB-INF/lib/tomcat-i18n-ja.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/WEB-INF/lib/tomcat-i18n-ko.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/WEB-INF/lib/tomcat-i18n-ru.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/WEB-INF/lib/tomcat-i18n-zh-CN.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/WEB-INF/lib/tomcat-jdbc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/WEB-INF/lib/tomcat-jni.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/WEB-INF/lib/tomcat-util-scan.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/WEB-INF/lib/tomcat-util.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/WEB-INF/lib/tomcat-websocket.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/WEB-INF/lib/websocket-api.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/device_add.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/device_add_ok.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/device_delete_ok.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/device_list.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/device_modify.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/device_modify_ok.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crud-notepad/web/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../datatable/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../datatable/.idea/datatable.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../datatable/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../datatable/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../datatable/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../datatable/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../datatable/dataTables.bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../datatable/dataTables.bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../datatable/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../datatable/get_record.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../datatable/jquery-1.8.3.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../datatable/jquery.dataTables.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../datatable/jquery.uniform.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../datatable/mysql-connector-java-5.0.4-bin.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../datatable/record_list.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../datatable/record_list.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../datatable/sort_asc.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../datatable/sort_asc_disabled.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../datatable/sort_both.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../datatable/sort_desc.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../datatable/sort_desc_disabled.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../datatable/video_file.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../datatable/说明.doc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../08/MyWeb2/out/artifacts/MyWeb_war_exploded/templates/admin/device.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../08/MyWeb2/out/artifacts/MyWeb_war_exploded/templates/admin/device.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../08/MyWeb2/out/artifacts/MyWeb_war_exploded/templates/admin/device_list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../08/MyWeb2/out/artifacts/MyWeb_war_exploded/templates/admin/device_list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../08/MyWeb2/web/templates/admin/device.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../08/MyWeb2/web/templates/admin/device.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../08/MyWeb2/web/templates/admin/device_list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../08/MyWeb2/web/templates/admin/device_list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../eclipse/.metadata/.bak_0.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../eclipse/.metadata/.bak_1.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../eclipse/.metadata/.lock" beforeDir="false" />
@@ -277,6 +134,9 @@
       <change beforePath="$PROJECT_DIR$/../../../../html/web/05classWork/5classTest2.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../html/web/firstHomeWork/frame.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../html/web/firstHomeWork/table.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../python/codeblock.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../python/helloworld.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../python/input.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -312,6 +172,7 @@
       <workItem from="1713017374423" duration="1404000" />
       <workItem from="1715414950521" duration="12000" />
       <workItem from="1715415310786" duration="4000" />
+      <workItem from="1717677698153" duration="23000" />
     </task>
     <servers />
   </component>

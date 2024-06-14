@@ -1,0 +1,11 @@
+<view class="container">
+  <map id="map" longitude="{{longitude}}" latitude="{{latitude}}"
+       style="width: 100%; height: 100%;"
+       markers="{{markers}}">
+  </map>
+  <!-- <view class="coords-display">
+    <text>经度: {{longitude}}</text>
+    <text>纬度: {{latitude}}</text>
+  </view> -->
+  <button class="locate-btn" bindtap="getLocation">定位</button>
+</view>

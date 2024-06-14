@@ -1,0 +1,6 @@
+<view style="width:700px;height:550px;border:1px solid #ccc;font-size:12px" id="map"></view>
+<text style="color:red;font-weight:600">
+  地图生成工具基于百度地图JS api v2.0版本开发，使用请申请密匙。
+  <navigator url="http://developer.baidu.com/map/index.php?title=jspopular/guide/introduction" style="color:#2f83c7" target="_blank">了解如何申请密匙</navigator>
+  <navigator url="http://lbsyun.baidu.com/apiconsole/key?application=key" style="color:#2f83c7" target="_blank">申请密匙</navigator>
+</text>
