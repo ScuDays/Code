@@ -49,6 +49,7 @@ Page({
     const recvTime = this.getCurrentFormattedTime();
     let sql = `insert into gps_realtime(device_type, device_id, latitude, longitude, gps_time, recv_time, data_source) values(
       'mobile','2022141461040', ${latitude}, ${longitude}, '${recvTime}', '${recvTime}', 'xcx')`;
+      console.log(sql);
     wx.request({
       url: 'http://www.ylxteach.net/teach-demo/device_file_servlet_action',
       data: { "action": "update_record", "sql": sql, "db_name": "webyykf2024" },

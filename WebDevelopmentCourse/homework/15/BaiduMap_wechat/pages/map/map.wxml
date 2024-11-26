@@ -9,3 +9,4 @@
   </view> -->
   <button class="locate-btn" bindtap="getLocation">定位</button>
 </view>
+d
